@@ -1,0 +1,1802 @@
+[
+  {
+    "episode": 0,
+    "seed": 100,
+    "reward": 8.812499999999998,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.497572016460907
+  },
+  {
+    "episode": 1,
+    "seed": 101,
+    "reward": 14.58533472606866,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.531847238088993
+  },
+  {
+    "episode": 2,
+    "seed": 102,
+    "reward": 10.414772727272725,
+    "length": 14,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.05030542304574
+  },
+  {
+    "episode": 3,
+    "seed": 103,
+    "reward": 18.771512214701303,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.822394871902407
+  },
+  {
+    "episode": 4,
+    "seed": 104,
+    "reward": 15.174956259241554,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.474605086053078
+  },
+  {
+    "episode": 5,
+    "seed": 105,
+    "reward": 8.567171305266806,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.188702208577357
+  },
+  {
+    "episode": 6,
+    "seed": 106,
+    "reward": 14.778390989672767,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.199841233547517
+  },
+  {
+    "episode": 7,
+    "seed": 107,
+    "reward": 6.409090909090907,
+    "length": 9,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.522697324737816
+  },
+  {
+    "episode": 8,
+    "seed": 108,
+    "reward": 14.778390989672767,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.199841233547517
+  },
+  {
+    "episode": 9,
+    "seed": 109,
+    "reward": 25.976057668376985,
+    "length": 30,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.902607966036456
+  },
+  {
+    "episode": 10,
+    "seed": 110,
+    "reward": 18.294239660995462,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.54406610607274
+  },
+  {
+    "episode": 11,
+    "seed": 111,
+    "reward": 20.77719406182191,
+    "length": 25,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.299130723339157
+  },
+  {
+    "episode": 12,
+    "seed": 112,
+    "reward": 10.414772727272725,
+    "length": 14,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.05030542304574
+  },
+  {
+    "episode": 13,
+    "seed": 113,
+    "reward": 18.47456917453958,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.798286799496687
+  },
+  {
+    "episode": 14,
+    "seed": 114,
+    "reward": 18.578336368962056,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.565848620335476
+  },
+  {
+    "episode": 15,
+    "seed": 115,
+    "reward": 3.204545454545454,
+    "length": 5,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.68720620672865
+  },
+  {
+    "episode": 16,
+    "seed": 116,
+    "reward": 1.65530303030303,
+    "length": 3,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.444444444444443
+  },
+  {
+    "episode": 17,
+    "seed": 117,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.674468442005793
+  },
+  {
+    "episode": 18,
+    "seed": 118,
+    "reward": 17.54387827005427,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.68651023071138
+  },
+  {
+    "episode": 19,
+    "seed": 119,
+    "reward": 14.970376024631827,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.2785877345196
+  },
+  {
+    "episode": 20,
+    "seed": 120,
+    "reward": 19.5783314164179,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.885180884041233
+  },
+  {
+    "episode": 21,
+    "seed": 121,
+    "reward": 15.57952735330913,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.90009997457119
+  },
+  {
+    "episode": 22,
+    "seed": 122,
+    "reward": 3.204545454545454,
+    "length": 5,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.30514611796982
+  },
+  {
+    "episode": 23,
+    "seed": 123,
+    "reward": 12.070075757575754,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.895833333333332
+  },
+  {
+    "episode": 24,
+    "seed": 124,
+    "reward": 1.602272727272727,
+    "length": 3,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.925925925925924
+  },
+  {
+    "episode": 25,
+    "seed": 125,
+    "reward": 14.373819895605191,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.34465691958398
+  },
+  {
+    "episode": 26,
+    "seed": 126,
+    "reward": 11.970410804696101,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.749609951317044
+  },
+  {
+    "episode": 27,
+    "seed": 127,
+    "reward": 8.011363636363635,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.45189674523008
+  },
+  {
+    "episode": 28,
+    "seed": 128,
+    "reward": 9.613636363636362,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.64045584045584
+  },
+  {
+    "episode": 29,
+    "seed": 129,
+    "reward": 22.37946678909464,
+    "length": 27,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.940320786927888
+  },
+  {
+    "episode": 30,
+    "seed": 130,
+    "reward": 12.667757810212835,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.835047987477317
+  },
+  {
+    "episode": 31,
+    "seed": 131,
+    "reward": 19.54386121181243,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.04594984094636
+  },
+  {
+    "episode": 32,
+    "seed": 132,
+    "reward": 24.379466760155854,
+    "length": 29,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.24842481723727
+  },
+  {
+    "episode": 33,
+    "seed": 133,
+    "reward": 21.18060414369063,
+    "length": 26,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.915397069402253
+  },
+  {
+    "episode": 34,
+    "seed": 134,
+    "reward": 2.403409090909091,
+    "length": 4,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.881432647462276
+  },
+  {
+    "episode": 35,
+    "seed": 135,
+    "reward": 19.976057698185546,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.16727419756583
+  },
+  {
+    "episode": 36,
+    "seed": 136,
+    "reward": 8.130681818181817,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 37,
+    "seed": 137,
+    "reward": 16.823863636363633,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.78754208754209
+  },
+  {
+    "episode": 38,
+    "seed": 138,
+    "reward": 25.98173948742858,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 26.632314998987763
+  },
+  {
+    "episode": 39,
+    "seed": 139,
+    "reward": 2.403409090909091,
+    "length": 4,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 21.885073907850092
+  },
+  {
+    "episode": 40,
+    "seed": 140,
+    "reward": 24.69764857761592,
+    "length": 29,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.861015515568486
+  },
+  {
+    "episode": 41,
+    "seed": 141,
+    "reward": 12.983061998795934,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.012151283760723
+  },
+  {
+    "episode": 42,
+    "seed": 142,
+    "reward": 4.0056818181818175,
+    "length": 6,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.462962962962962
+  },
+  {
+    "episode": 43,
+    "seed": 143,
+    "reward": 8.011363636363635,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.129455928835682
+  },
+  {
+    "episode": 44,
+    "seed": 144,
+    "reward": 21.214694032671947,
+    "length": 25,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.878777998572932
+  },
+  {
+    "episode": 45,
+    "seed": 145,
+    "reward": 21.94727030272152,
+    "length": 27,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.92973319195232
+  },
+  {
+    "episode": 46,
+    "seed": 146,
+    "reward": 3.204545454545454,
+    "length": 5,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.340855184528067
+  },
+  {
+    "episode": 47,
+    "seed": 147,
+    "reward": 15.742827158827312,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.505268428240054
+  },
+  {
+    "episode": 48,
+    "seed": 148,
+    "reward": 14.58533472606866,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.865732673981636
+  },
+  {
+    "episode": 49,
+    "seed": 149,
+    "reward": 17.578365350150644,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.3642824380988
+  },
+  {
+    "episode": 50,
+    "seed": 150,
+    "reward": 11.573845535127314,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.74582425383868
+  },
+  {
+    "episode": 51,
+    "seed": 151,
+    "reward": 15.572649598236081,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.852858171166748
+  },
+  {
+    "episode": 52,
+    "seed": 152,
+    "reward": 18.777195052781536,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.74253158399032
+  },
+  {
+    "episode": 53,
+    "seed": 153,
+    "reward": 15.3737909144166,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.73777642420086
+  },
+  {
+    "episode": 54,
+    "seed": 154,
+    "reward": 16.667749594580457,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.6680280617583
+  },
+  {
+    "episode": 55,
+    "seed": 155,
+    "reward": 17.474575992031017,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.60730762725623
+  },
+  {
+    "episode": 56,
+    "seed": 156,
+    "reward": 8.977380180614118,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.017214318661022
+  },
+  {
+    "episode": 57,
+    "seed": 157,
+    "reward": 16.578534941630437,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.24243881774932
+  },
+  {
+    "episode": 58,
+    "seed": 158,
+    "reward": 13.169240507326991,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.327771326061846
+  },
+  {
+    "episode": 59,
+    "seed": 159,
+    "reward": 3.204545454545454,
+    "length": 5,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.0848030434385
+  },
+  {
+    "episode": 60,
+    "seed": 160,
+    "reward": 17.624999999999996,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.416275454233766
+  },
+  {
+    "episode": 61,
+    "seed": 161,
+    "reward": 17.976058689145173,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.081832900202663
+  },
+  {
+    "episode": 62,
+    "seed": 162,
+    "reward": 12.818181818181815,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.399865796447084
+  },
+  {
+    "episode": 63,
+    "seed": 163,
+    "reward": 26.180603123070462,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 26.798981665049535
+  },
+  {
+    "episode": 64,
+    "seed": 164,
+    "reward": 17.976058689145173,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.86444525949594
+  },
+  {
+    "episode": 65,
+    "seed": 165,
+    "reward": 17.976058689145173,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.021739269611952
+  },
+  {
+    "episode": 66,
+    "seed": 166,
+    "reward": 22.140451607844966,
+    "length": 26,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.92703012626766
+  },
+  {
+    "episode": 67,
+    "seed": 167,
+    "reward": 12.017045454545451,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.22126847696252
+  },
+  {
+    "episode": 68,
+    "seed": 168,
+    "reward": 2.403409090909091,
+    "length": 4,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.17653497942387
+  },
+  {
+    "episode": 69,
+    "seed": 169,
+    "reward": 16.823863636363633,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.327078400169192
+  },
+  {
+    "episode": 70,
+    "seed": 170,
+    "reward": 4.0056818181818175,
+    "length": 6,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.653998476855165
+  },
+  {
+    "episode": 71,
+    "seed": 171,
+    "reward": 8.163563641689331,
+    "length": 10,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.880030997152524
+  },
+  {
+    "episode": 72,
+    "seed": 172,
+    "reward": 10.407902325122112,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.305393507928482
+  },
+  {
+    "episode": 73,
+    "seed": 173,
+    "reward": 12.017045454545451,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.697303774107937
+  },
+  {
+    "episode": 74,
+    "seed": 174,
+    "reward": 19.379472732598423,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.503256897718206
+  },
+  {
+    "episode": 75,
+    "seed": 175,
+    "reward": 14.778390989672767,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.130171214870213
+  },
+  {
+    "episode": 76,
+    "seed": 176,
+    "reward": 14.420454545454541,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.243352289430902
+  },
+  {
+    "episode": 77,
+    "seed": 177,
+    "reward": 16.345598764267947,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.243710085109928
+  },
+  {
+    "episode": 78,
+    "seed": 178,
+    "reward": 17.294240507326993,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.37949883870443
+  },
+  {
+    "episode": 79,
+    "seed": 179,
+    "reward": 4.806818181818181,
+    "length": 7,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.332275132275132
+  },
+  {
+    "episode": 80,
+    "seed": 180,
+    "reward": 12.818181818181815,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.50151356410877
+  },
+  {
+    "episode": 81,
+    "seed": 181,
+    "reward": 12.818181818181815,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.37622044329684
+  },
+  {
+    "episode": 82,
+    "seed": 182,
+    "reward": 12.017045454545451,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.62317901234568
+  },
+  {
+    "episode": 83,
+    "seed": 183,
+    "reward": 7.210227272727271,
+    "length": 10,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.592399086113097
+  },
+  {
+    "episode": 84,
+    "seed": 184,
+    "reward": 11.215909090909088,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.96773398778716
+  },
+  {
+    "episode": 85,
+    "seed": 185,
+    "reward": 19.174921334549182,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.261643671421858
+  },
+  {
+    "episode": 86,
+    "seed": 186,
+    "reward": 19.5783314164179,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.792408154537952
+  },
+  {
+    "episode": 87,
+    "seed": 187,
+    "reward": 8.812499999999998,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.82699923842758
+  },
+  {
+    "episode": 88,
+    "seed": 188,
+    "reward": 9.613636363636362,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.263385785937885
+  },
+  {
+    "episode": 89,
+    "seed": 189,
+    "reward": 23.49878494619758,
+    "length": 28,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.570337502708032
+  },
+  {
+    "episode": 90,
+    "seed": 190,
+    "reward": 21.584047168332464,
+    "length": 27,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.22977127972265
+  },
+  {
+    "episode": 91,
+    "seed": 191,
+    "reward": 25.584012243640093,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 26.298981689907887
+  },
+  {
+    "episode": 92,
+    "seed": 192,
+    "reward": 17.771512218924848,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.447079125987663
+  },
+  {
+    "episode": 93,
+    "seed": 193,
+    "reward": 24.220375854052726,
+    "length": 29,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.447222415336352
+  },
+  {
+    "episode": 94,
+    "seed": 194,
+    "reward": 1.721590909090909,
+    "length": 3,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 95,
+    "seed": 195,
+    "reward": 14.175125850721349,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.41541173235417
+  },
+  {
+    "episode": 96,
+    "seed": 196,
+    "reward": 16.67343962839465,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.636227038077955
+  },
+  {
+    "episode": 97,
+    "seed": 197,
+    "reward": 6.409090909090907,
+    "length": 9,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.641975308641975
+  },
+  {
+    "episode": 98,
+    "seed": 198,
+    "reward": 16.18760745334139,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.00983675352058
+  },
+  {
+    "episode": 99,
+    "seed": 199,
+    "reward": 21.777194037106668,
+    "length": 26,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.269791576975727
+  },
+  {
+    "episode": 100,
+    "seed": 200,
+    "reward": 16.578534941630437,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.098844014016713
+  },
+  {
+    "episode": 101,
+    "seed": 201,
+    "reward": 20.220380374448084,
+    "length": 25,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.87878254801636
+  },
+  {
+    "episode": 102,
+    "seed": 202,
+    "reward": 15.221590909090905,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.6842921908268
+  },
+  {
+    "episode": 103,
+    "seed": 203,
+    "reward": 13.619318181818178,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.307794201744464
+  },
+  {
+    "episode": 104,
+    "seed": 204,
+    "reward": 5.660984848484847,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.791666666666664
+  },
+  {
+    "episode": 105,
+    "seed": 205,
+    "reward": 19.180638077423374,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.294908718780135
+  },
+  {
+    "episode": 106,
+    "seed": 206,
+    "reward": 8.064393939393938,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.848484848484848
+  },
+  {
+    "episode": 107,
+    "seed": 207,
+    "reward": 14.420454545454541,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.74509791503826
+  },
+  {
+    "episode": 108,
+    "seed": 208,
+    "reward": 1.602272727272727,
+    "length": 3,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 19.838669938935812
+  },
+  {
+    "episode": 109,
+    "seed": 209,
+    "reward": 12.017045454545451,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.707870370370372
+  },
+  {
+    "episode": 110,
+    "seed": 210,
+    "reward": 17.18180008058186,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.789516058239908
+  },
+  {
+    "episode": 111,
+    "seed": 211,
+    "reward": 26.777194032013348,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 27.298981664925478
+  },
+  {
+    "episode": 112,
+    "seed": 212,
+    "reward": 20.379467780054267,
+    "length": 25,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.849773648679584
+  },
+  {
+    "episode": 113,
+    "seed": 213,
+    "reward": 17.17492232550881,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.77163358343658
+  },
+  {
+    "episode": 114,
+    "seed": 214,
+    "reward": 2.403409090909091,
+    "length": 4,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.348936884011582
+  },
+  {
+    "episode": 115,
+    "seed": 215,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.442536953925046
+  },
+  {
+    "episode": 116,
+    "seed": 216,
+    "reward": 1.602272727272727,
+    "length": 3,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 20.84676521046679
+  },
+  {
+    "episode": 117,
+    "seed": 217,
+    "reward": 15.386471089705024,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.59960638979013
+  },
+  {
+    "episode": 118,
+    "seed": 218,
+    "reward": 16.006485005489665,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.836724006901296
+  },
+  {
+    "episode": 119,
+    "seed": 219,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.088267489711935
+  },
+  {
+    "episode": 120,
+    "seed": 220,
+    "reward": 3.204545454545454,
+    "length": 5,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.68720620672865
+  },
+  {
+    "episode": 121,
+    "seed": 221,
+    "reward": 26.777194032013348,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 27.298981664925478
+  },
+  {
+    "episode": 122,
+    "seed": 222,
+    "reward": 4.806818181818181,
+    "length": 7,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.100610846091477
+  },
+  {
+    "episode": 123,
+    "seed": 223,
+    "reward": 19.174921334549182,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.531165991538035
+  },
+  {
+    "episode": 124,
+    "seed": 224,
+    "reward": 20.77719406182191,
+    "length": 25,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.015546449882113
+  },
+  {
+    "episode": 125,
+    "seed": 225,
+    "reward": 13.619318181818178,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.59478555098308
+  },
+  {
+    "episode": 126,
+    "seed": 226,
+    "reward": 23.976057668401666,
+    "length": 28,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.789024542426237
+  },
+  {
+    "episode": 127,
+    "seed": 227,
+    "reward": 6.409090909090907,
+    "length": 9,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.480658436213993
+  },
+  {
+    "episode": 128,
+    "seed": 228,
+    "reward": 23.37378494110786,
+    "length": 27,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.86624673066091
+  },
+  {
+    "episode": 129,
+    "seed": 229,
+    "reward": 16.80762136912603,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.79688000657266
+  },
+  {
+    "episode": 130,
+    "seed": 230,
+    "reward": 12.48742232550881,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.9312983741862
+  },
+  {
+    "episode": 131,
+    "seed": 231,
+    "reward": 8.812499999999998,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.709667484733952
+  },
+  {
+    "episode": 132,
+    "seed": 232,
+    "reward": 14.089695052781536,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.70408680075253
+  },
+  {
+    "episode": 133,
+    "seed": 233,
+    "reward": 0.9204545454545453,
+    "length": 2,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 134,
+    "seed": 234,
+    "reward": 20.976057673470304,
+    "length": 25,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.552013065653455
+  },
+  {
+    "episode": 135,
+    "seed": 235,
+    "reward": 23.006485277802696,
+    "length": 27,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.91609211054643
+  },
+  {
+    "episode": 136,
+    "seed": 236,
+    "reward": 11.215909090909088,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.169353042093356
+  },
+  {
+    "episode": 137,
+    "seed": 237,
+    "reward": 16.97606364168933,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.57515074024938
+  },
+  {
+    "episode": 138,
+    "seed": 238,
+    "reward": 9.613636363636362,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.917230066240844
+  },
+  {
+    "episode": 139,
+    "seed": 239,
+    "reward": 25.180603123792217,
+    "length": 30,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.206810656662693
+  },
+  {
+    "episode": 140,
+    "seed": 240,
+    "reward": 10.579652907886844,
+    "length": 14,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.495782609953444
+  },
+  {
+    "episode": 141,
+    "seed": 241,
+    "reward": 13.619318181818178,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.740329218106993
+  },
+  {
+    "episode": 142,
+    "seed": 242,
+    "reward": 14.970376024631827,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.39403810737659
+  },
+  {
+    "episode": 143,
+    "seed": 243,
+    "reward": 18.890830396519487,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 27.22588408952877
+  },
+  {
+    "episode": 144,
+    "seed": 244,
+    "reward": 15.174956259241554,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.80088245879387
+  },
+  {
+    "episode": 145,
+    "seed": 245,
+    "reward": 7.2632575757575735,
+    "length": 10,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.833333333333336
+  },
+  {
+    "episode": 146,
+    "seed": 246,
+    "reward": 20.77151221385621,
+    "length": 24,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.96159329086626
+  },
+  {
+    "episode": 147,
+    "seed": 247,
+    "reward": 10.414772727272725,
+    "length": 14,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.24255339543188
+  },
+  {
+    "episode": 148,
+    "seed": 248,
+    "reward": 2.403409090909091,
+    "length": 4,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.881432647462276
+  },
+  {
+    "episode": 149,
+    "seed": 249,
+    "reward": 16.988743816977752,
+    "length": 22,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.774649114386477
+  },
+  {
+    "episode": 150,
+    "seed": 250,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.338034490330042
+  },
+  {
+    "episode": 151,
+    "seed": 251,
+    "reward": 11.215909090909088,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.113618394842693
+  },
+  {
+    "episode": 152,
+    "seed": 252,
+    "reward": 10.860931446784377,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 27.18158169927528
+  },
+  {
+    "episode": 153,
+    "seed": 253,
+    "reward": 26.180603123070462,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 26.798981665049535
+  },
+  {
+    "episode": 154,
+    "seed": 254,
+    "reward": 22.87797690132983,
+    "length": 28,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.012877217520664
+  },
+  {
+    "episode": 155,
+    "seed": 255,
+    "reward": 14.420454545454541,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.49600080090487
+  },
+  {
+    "episode": 156,
+    "seed": 256,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.554503879205406
+  },
+  {
+    "episode": 157,
+    "seed": 257,
+    "reward": 4.926136363636362,
+    "length": 7,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 158,
+    "seed": 258,
+    "reward": 16.380663716945495,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.004003489571044
+  },
+  {
+    "episode": 159,
+    "seed": 259,
+    "reward": 16.380663716945495,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.058932207718748
+  },
+  {
+    "episode": 160,
+    "seed": 260,
+    "reward": 7.329545454545452,
+    "length": 10,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 161,
+    "seed": 261,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.803001902149063
+  },
+  {
+    "episode": 162,
+    "seed": 262,
+    "reward": 12.017045454545451,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.79861111111111
+  },
+  {
+    "episode": 163,
+    "seed": 263,
+    "reward": 15.474849339915282,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.168382027322075
+  },
+  {
+    "episode": 164,
+    "seed": 264,
+    "reward": 12.818181818181815,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.21789858368473
+  },
+  {
+    "episode": 165,
+    "seed": 265,
+    "reward": 15.572649598236081,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.809928697979785
+  },
+  {
+    "episode": 166,
+    "seed": 266,
+    "reward": 11.215909090909088,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.43504870598994
+  },
+  {
+    "episode": 167,
+    "seed": 267,
+    "reward": 4.0056818181818175,
+    "length": 6,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.784045987106722
+  },
+  {
+    "episode": 168,
+    "seed": 268,
+    "reward": 12.017045454545451,
+    "length": 16,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.277251939602703
+  },
+  {
+    "episode": 169,
+    "seed": 269,
+    "reward": 9.613636363636362,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.438933839822727
+  },
+  {
+    "episode": 170,
+    "seed": 270,
+    "reward": 15.169239516367362,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.504346589701534
+  },
+  {
+    "episode": 171,
+    "seed": 271,
+    "reward": 4.806818181818181,
+    "length": 7,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 22.78800140240106
+  },
+  {
+    "episode": 172,
+    "seed": 272,
+    "reward": 8.865530303030301,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.86111111111111
+  },
+  {
+    "episode": 173,
+    "seed": 273,
+    "reward": 4.0056818181818175,
+    "length": 6,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.40400253619875
+  },
+  {
+    "episode": 174,
+    "seed": 274,
+    "reward": 12.983061998795934,
+    "length": 17,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.52894869387074
+  },
+  {
+    "episode": 175,
+    "seed": 275,
+    "reward": 5.727272727272726,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 176,
+    "seed": 276,
+    "reward": 14.071206795567868,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.46454282555512
+  },
+  {
+    "episode": 177,
+    "seed": 277,
+    "reward": 11.215909090909088,
+    "length": 15,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.487102248318926
+  },
+  {
+    "episode": 178,
+    "seed": 278,
+    "reward": 14.897709171490948,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.473660257010586
+  },
+  {
+    "episode": 179,
+    "seed": 279,
+    "reward": 8.812499999999998,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.39217832647462
+  },
+  {
+    "episode": 180,
+    "seed": 280,
+    "reward": 8.130681818181817,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.0
+  },
+  {
+    "episode": 181,
+    "seed": 281,
+    "reward": 8.011363636363635,
+    "length": 11,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.229611871804465
+  },
+  {
+    "episode": 182,
+    "seed": 282,
+    "reward": 8.865530303030301,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.86111111111111
+  },
+  {
+    "episode": 183,
+    "seed": 283,
+    "reward": 10.414772727272725,
+    "length": 14,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.569347442680776
+  },
+  {
+    "episode": 184,
+    "seed": 284,
+    "reward": 24.41557617894243,
+    "length": 30,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.89114955949461
+  },
+  {
+    "episode": 185,
+    "seed": 285,
+    "reward": 22.180603297359102,
+    "length": 27,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.066678746975708
+  },
+  {
+    "episode": 186,
+    "seed": 286,
+    "reward": 16.578534941630437,
+    "length": 21,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.41903596851976
+  },
+  {
+    "episode": 187,
+    "seed": 287,
+    "reward": 6.409090909090907,
+    "length": 9,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.189571101966166
+  },
+  {
+    "episode": 188,
+    "seed": 288,
+    "reward": 9.666666666666664,
+    "length": 13,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.87179487179487
+  },
+  {
+    "episode": 189,
+    "seed": 289,
+    "reward": 15.3737909144166,
+    "length": 19,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 25.73777642420086
+  },
+  {
+    "episode": 190,
+    "seed": 290,
+    "reward": 2.403409090909091,
+    "length": 4,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.492716049382715
+  },
+  {
+    "episode": 191,
+    "seed": 291,
+    "reward": 3.204545454545454,
+    "length": 5,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.541227983539095
+  },
+  {
+    "episode": 192,
+    "seed": 292,
+    "reward": 19.373784946197578,
+    "length": 23,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 26.43541656527691
+  },
+  {
+    "episode": 193,
+    "seed": 293,
+    "reward": 5.607954545454544,
+    "length": 8,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 23.442536953925046
+  },
+  {
+    "episode": 194,
+    "seed": 294,
+    "reward": 8.812499999999998,
+    "length": 12,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.73148148148148
+  },
+  {
+    "episode": 195,
+    "seed": 295,
+    "reward": 4.05871212121212,
+    "length": 6,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.722222222222225
+  },
+  {
+    "episode": 196,
+    "seed": 296,
+    "reward": 26.578330395653314,
+    "length": 30,
+    "crashed": false,
+    "offroad": false,
+    "mean_speed": 27.132314998261837
+  },
+  {
+    "episode": 197,
+    "seed": 297,
+    "reward": 13.619318181818178,
+    "length": 18,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.310208152198218
+  },
+  {
+    "episode": 198,
+    "seed": 298,
+    "reward": 15.386471089705024,
+    "length": 20,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 24.872446040282554
+  },
+  {
+    "episode": 199,
+    "seed": 299,
+    "reward": 22.771512213831528,
+    "length": 26,
+    "crashed": true,
+    "offroad": false,
+    "mean_speed": 27.26991556559306
+  }
+]

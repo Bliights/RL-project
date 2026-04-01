@@ -1,0 +1,11 @@
+{
+  "mean_reward": 13.449835690223413,
+  "std_reward": 6.585853262763035,
+  "mean_episode_length": 16.97,
+  "crash_rate": 0.965,
+  "offroad_rate": 0.0,
+  "mean_speed": 25.05127168793133,
+  "n_episodes": 200,
+  "seed": 3,
+  "model_path": "results/sb3_dqn/seed_3/final_model.zip"
+}

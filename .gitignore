@@ -214,3 +214,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# RL project — large binaries
+videos/
+results/**/*.zip
+results/**/tb_logs/
+results/**/checkpoints/
+results/**/best_model/

@@ -8,18 +8,18 @@ from pathlib import Path
 import numpy as np
 from stable_baselines3 import DQN
 
-sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent))  # noqa: E402
+sys.path.insert(0, str(Path(__file__).parent.parent))  # noqa: E402
 
-from utils import EVAL_SEEDS, make_env
+from utils import EVAL_SEEDS, make_env  # noqa: E402
 
 
 def evaluate_model(
     model_path: Path,
-    n_episodes: int = 50,
+    n_episodes: int = 200,
     seed: int = 0,
-) -> dict[str, float]:
-    """Run deterministic evaluation and return aggregated metrics."""
+) -> tuple[dict[str, float], list[dict]]:
+    """Run deterministic evaluation and return aggregated metrics + per-episode data."""
     model = DQN.load(str(model_path))
     env = make_env(seed=seed)()
 
@@ -28,6 +28,7 @@ def evaluate_model(
     crashes: list[float] = []
     offroads: list[float] = []
     ep_speeds: list[float] = []
+    episodes: list[dict] = []
 
     for ep in range(n_episodes):
         obs, _ = env.reset(seed=seed + ep)
@@ -54,33 +55,36 @@ def evaluate_model(
         crashes.append(float(crashed))
         offroads.append(float(offroad))
         ep_speeds.append(float(np.mean(step_speeds)) if step_speeds else 0.0)
+        episodes.append(
+            {
+                "episode": ep,
+                "seed": seed + ep,
+                "reward": total_reward,
+                "length": length,
+                "crashed": crashed,
+                "offroad": offroad,
+                "mean_speed": float(np.mean(step_speeds)) if step_speeds else 0.0,
+            },
+        )
 
     env.close()
 
-    return {
+    summary = {
         "mean_reward": float(np.mean(rewards)),
         "std_reward": float(np.std(rewards)),
         "mean_episode_length": float(np.mean(lengths)),
         "crash_rate": float(np.mean(crashes)),
         "offroad_rate": float(np.mean(offroads)),
         "mean_speed": float(np.mean(ep_speeds)),
+        "n_episodes": n_episodes,
     }
+    return summary, episodes
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate a trained SB3 DQN model")
-    parser.add_argument(
-        "--model-path",
-        type=Path,
-        required=True,
-        help="Path to the .zip model file",
-    )
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=None,
-        help="Directory to save eval_results.json (defaults to model parent dir)",
-    )
+    parser.add_argument("--model-path", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--n-eval-episodes", type=int, default=50)
     parser.add_argument("--seed", type=int, default=EVAL_SEEDS[0])
     return parser.parse_args()
@@ -88,13 +92,12 @@ def parse_args() -> argparse.Namespace:
 
 if __name__ == "__main__":
     args = parse_args()
-    results = evaluate_model(
+    results, episodes = evaluate_model(
         model_path=args.model_path,
         n_episodes=args.n_eval_episodes,
         seed=args.seed,
     )
 
-    # infer seed from parent dir name (seed_0, seed_1, ...)
     seed_name = args.model_path.parent.name
     if seed_name.startswith("seed_"):
         results["seed"] = int(seed_name.split("_")[1])
@@ -104,9 +107,13 @@ if __name__ == "__main__":
     output_dir = args.output_dir or args.model_path.parent
     output_dir.mkdir(parents=True, exist_ok=True)
     out_path = output_dir / "eval_results.json"
+    episodes_path = output_dir / "eval_episodes.json"
 
     with out_path.open("w") as f:
         json.dump(results, f, indent=2)
+
+    with episodes_path.open("w") as f:
+        json.dump(episodes, f, indent=2)
 
     print(f"Evaluation results ({args.n_eval_episodes} episodes):")
     for k, v in results.items():
@@ -115,3 +122,4 @@ if __name__ == "__main__":
         else:
             print(f"  {k}: {v}")
     print(f"\nSaved to {out_path}")
+    print(f"Per-episode data saved to {episodes_path}")

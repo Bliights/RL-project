@@ -9,10 +9,10 @@ from stable_baselines3 import DQN
 from stable_baselines3.common.callbacks import CallbackList, CheckpointCallback, EvalCallback
 from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv, VecMonitor
 
-sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent))  # noqa: E402
+sys.path.insert(0, str(Path(__file__).parent.parent))  # noqa: E402
 
-from utils import EVAL_SEEDS, HighwayMetricsCallback, make_env
+from utils import EVAL_SEEDS, HighwayMetricsCallback, make_env  # noqa: E402
 
 DQN_HPARAMS: dict = {
     "policy": "MlpPolicy",

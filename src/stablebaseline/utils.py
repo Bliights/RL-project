@@ -5,18 +5,18 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 import gymnasium
-
-if TYPE_CHECKING:
-    from collections.abc import Callable
 import numpy as np
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.monitor import Monitor
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent.parent))  # noqa: E402
 
-import highway_env  # noqa: F401
+import highway_env  # noqa: F401, E402
 
-from shared_core_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
+from shared_core_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID  # noqa: E402
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 EVAL_SEEDS: list[int] = [100, 101, 102, 103, 104]
 
@@ -25,13 +25,15 @@ def make_env(
     seed: int = 0,
     monitor_path: Path | None = None,
     render_mode: str = "rgb_array",
+    config: dict | None = None,
 ) -> Callable[[], gymnasium.Env]:
     """Return a callable that creates and seeds the highway env with Monitor."""
+    env_config = config if config is not None else SHARED_CORE_CONFIG
 
     def _init() -> gymnasium.Env:
         env = gymnasium.make(
             SHARED_CORE_ENV_ID,
-            config=SHARED_CORE_CONFIG,
+            config=env_config,
             render_mode=render_mode,
         )
         monitor_file = str(monitor_path) if monitor_path is not None else None
