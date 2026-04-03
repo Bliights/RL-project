@@ -27,3 +27,19 @@ fix:
 pre-commit:
 	@echo Run pre-commit...
 	uv run pre-commit run --all-files
+
+# ------------------- Script -------------------
+training:
+	uv run python -m src.scripts.training.train \
+		$(if $(SEED),--seed $(SEED)) \
+		$(if $(MODEL),--model $(MODEL)) \
+		$(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR)) \
+		$(if $(HELP),--help)
+
+evaluation:
+	uv run python -m src.scripts.evaluation.evaluate \
+		$(if $(MODEL_PATH),--model-path $(MODEL_PATH)) \
+		$(if $(SEED),--seed $(SEED)) \
+		$(if $(N),--n-episodes $(N)) \
+		$(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR)) \
+		$(if $(HELP),--help)
