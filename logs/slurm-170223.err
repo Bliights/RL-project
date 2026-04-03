@@ -1,0 +1,555 @@
+[96m[INFO] : Loading model from data/training/extension/dense/seed_0/model_dqn_seed_0.pt[0m
+[96m[INFO] : Loading model from data/training/extension/dense/seed_1/model_dqn_seed_1.pt[0m
+[96m[INFO] : Loading model from data/training/extension/dense/seed_2/model_dqn_seed_2.pt[0m
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GeForce GTX 1080 Ti which is of cuda capability 6.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (7.0) - (12.0)
+    
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Please install PyTorch with a following CUDA
+    configurations:  12.6 following instructions at
+    https://pytorch.org/get-started/locally/
+    
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GeForce GTX 1080 Ti which is of cuda capability 6.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (7.0) - (12.0)
+    
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+NVIDIA GeForce GTX 1080 Ti with CUDA capability sm_61 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+If you want to use the NVIDIA GeForce GTX 1080 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Please install PyTorch with a following CUDA
+    configurations:  12.6 following instructions at
+    https://pytorch.org/get-started/locally/
+    
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+NVIDIA GeForce GTX 1080 Ti with CUDA capability sm_61 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+If you want to use the NVIDIA GeForce GTX 1080 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GeForce GTX 1080 Ti which is of cuda capability 6.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (7.0) - (12.0)
+    
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Please install PyTorch with a following CUDA
+    configurations:  12.6 following instructions at
+    https://pytorch.org/get-started/locally/
+    
+  queued_call()
+/usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+NVIDIA GeForce GTX 1080 Ti with CUDA capability sm_61 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+If you want to use the NVIDIA GeForce GTX 1080 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  queued_call()
+[96m[INFO] : Benchmark loaded ![0m
+[96m[INFO] : Benchmark loaded ![0m
+[96m[INFO] : Benchmark loaded ![0m
+[96m[INFO] : Starting evaluation...[0m
+[96m[INFO] : Starting evaluation...[0m
+[96m[INFO] : Starting evaluation...[0m
+Evaluation Episodes:   0%|[34m                    [0m| 0/10 Evaluation Episodes:   0%|[34m                    [0m| 0/10 Evaluation Episodes:   0%|[34m                    [0m| 0/10 Evaluation Episodes:   0%|[34m                    [0m| 0/10 Evaluation Episodes:   0%|[34m                    [0m| 0/10 Evaluation Episodes:   0%|[34m                    [0m| 0/10 
+
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/evaluation/eva │
+│ luate.py:82 in main                                                          │
+│                                                                              │
+│    79 │   logger.info("Benchmark loaded !")                                  │
+│    80 │   logger.info("Starting evaluation...")                              │
+│    81 │                                                                      │
+│ ❱  82 │   summary, episodes = model.evaluate(                                │
+│    83 │   │   env_factory=benchmark.make_env,                                │
+│    84 │   │   n_episodes=n_episodes,                                         │
+│    85 │   │   seed=seed,                                                     │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:312 in evaluate                                                     │
+│                                                                              │
+│   309 │   │   │   │   final_info: dict = {}                                  │
+│   310 │   │   │   │                                                          │
+│   311 │   │   │   │   while not done:                                        │
+│ ❱ 312 │   │   │   │   │   action = self.act(state, greedy=True)              │
+│   313 │   │   │   │   │   state, _, terminated, truncated, info = env.step(a │
+│   314 │   │   │   │   │   done = terminated or truncated                     │
+│   315 │   │   │   │   │   final_info = info                                  │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:100 in act                                                          │
+│                                                                              │
+│    97 │   │   epsilon = 0.0 if greedy else self.epsilon                      │
+│    98 │   │   if np.random.rand() < epsilon:                                 │
+│    99 │   │   │   return int(np.random.randint(self.n_actions))              │
+│ ❱ 100 │   │   return int(np.argmax(self.get_q(state)))                       │
+│   101 │                                                                      │
+│   102 │   def decrease_epsilon(self) -> None:                                │
+│   103 │   │   """                                                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:76 in get_q                                                         │
+│                                                                              │
+│    73 │   │   """                                                            │
+│    74 │   │   state_tensor = torch.tensor(state, device=self.device).unsquee │
+│    75 │   │   with torch.no_grad():                                          │
+│ ❱  76 │   │   │   q_values = self.q_net(state_tensor)                        │
+│    77 │   │   return q_values.squeeze(0).detach().cpu().numpy()              │
+│    78 │                                                                      │
+│    79 │   def act(self, state: np.ndarray, greedy: bool = False) -> int:     │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ network.py:40 in forward                                                     │
+│                                                                              │
+│   37 │   │   torch.Tensor                                                    │
+│   38 │   │   │   Tensor containing one predicted Q-value per action          │
+│   39 │   │   """                                                             │
+│ ❱ 40 │   │   return self.network(x)                                          │
+│   41                                                                         │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/container.py:253 in forward                        │
+│                                                                              │
+│    250 │   │   Runs the forward pass.                                        │
+│    251 │   │   """                                                           │
+│    252 │   │   for module in self:                                           │
+│ ❱  253 │   │   │   input = module(input)                                     │
+│    254 │   │   return input                                                  │
+│    255 │                                                                     │
+│    256 │   def append(self, module: Module) -> Self:                         │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/activation.py:143 in forward                       │
+│                                                                              │
+│    140 │   │   """                                                           │
+│    141 │   │   Runs the forward pass.                                        │
+│    142 │   │   """                                                           │
+│ ❱  143 │   │   return F.relu(input, inplace=self.inplace)                    │
+│    144 │                                                                     │
+│    145 │   def extra_repr(self) -> str:                                      │
+│    146 │   │   """                                                           │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/functional.py:1721 in relu                                 │
+│                                                                              │
+│   1718 │   if inplace:                                                       │
+│   1719 │   │   result = torch.relu_(input)                                   │
+│   1720 │   else:                                                             │
+│ ❱ 1721 │   │   result = torch.relu(input)                                    │
+│   1722 │   return result                                                     │
+│   1723                                                                       │
+│   1724                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+AcceleratorError: CUDA error: no kernel image is available for execution on the 
+device
+Search for `cudaErrorNoKernelImageForDevice' in 
+https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more
+information.
+CUDA kernel errors might be asynchronously reported at some other API call, so 
+the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/evaluation/eva │
+│ luate.py:82 in main                                                          │
+│                                                                              │
+│    79 │   logger.info("Benchmark loaded !")                                  │
+│    80 │   logger.info("Starting evaluation...")                              │
+│    81 │                                                                      │
+│ ❱  82 │   summary, episodes = model.evaluate(                                │
+│    83 │   │   env_factory=benchmark.make_env,                                │
+│    84 │   │   n_episodes=n_episodes,                                         │
+│    85 │   │   seed=seed,                                                     │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:312 in evaluate                                                     │
+│                                                                              │
+│   309 │   │   │   │   final_info: dict = {}                                  │
+│   310 │   │   │   │                                                          │
+│   311 │   │   │   │   while not done:                                        │
+│ ❱ 312 │   │   │   │   │   action = self.act(state, greedy=True)              │
+│   313 │   │   │   │   │   state, _, terminated, truncated, info = env.step(a │
+│   314 │   │   │   │   │   done = terminated or truncated                     │
+│   315 │   │   │   │   │   final_info = info                                  │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:100 in act                                                          │
+│                                                                              │
+│    97 │   │   epsilon = 0.0 if greedy else self.epsilon                      │
+│    98 │   │   if np.random.rand() < epsilon:                                 │
+│    99 │   │   │   return int(np.random.randint(self.n_actions))              │
+│ ❱ 100 │   │   return int(np.argmax(self.get_q(state)))                       │
+│   101 │                                                                      │
+│   102 │   def decrease_epsilon(self) -> None:                                │
+│   103 │   │   """                                                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:76 in get_q                                                         │
+│                                                                              │
+│    73 │   │   """                                                            │
+│    74 │   │   state_tensor = torch.tensor(state, device=self.device).unsquee │
+│    75 │   │   with torch.no_grad():                                          │
+│ ❱  76 │   │   │   q_values = self.q_net(state_tensor)                        │
+│    77 │   │   return q_values.squeeze(0).detach().cpu().numpy()              │
+│    78 │                                                                      │
+│    79 │   def act(self, state: np.ndarray, greedy: bool = False) -> int:     │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ network.py:40 in forward                                                     │
+│                                                                              │
+│   37 │   │   torch.Tensor                                                    │
+│   38 │   │   │   Tensor containing one predicted Q-value per action          │
+│   39 │   │   """                                                             │
+│ ❱ 40 │   │   return self.network(x)                                          │
+│   41                                                                         │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/container.py:253 in forward                        │
+│                                                                              │
+│    250 │   │   Runs the forward pass.                                        │
+│    251 │   │   """                                                           │
+│    252 │   │   for module in self:                                           │
+│ ❱  253 │   │   │   input = module(input)                                     │
+│    254 │   │   return input                                                  │
+│    255 │                                                                     │
+│    256 │   def append(self, module: Module) -> Self:                         │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/activation.py:143 in forward                       │
+│                                                                              │
+│    140 │   │   """                                                           │
+│    141 │   │   Runs the forward pass.                                        │
+│    142 │   │   """                                                           │
+│ ❱  143 │   │   return F.relu(input, inplace=self.inplace)                    │
+│    144 │                                                                     │
+│    145 │   def extra_repr(self) -> str:                                      │
+│    146 │   │   """                                                           │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/functional.py:1721 in relu                                 │
+│                                                                              │
+│   1718 │   if inplace:                                                       │
+│   1719 │   │   result = torch.relu_(input)                                   │
+│   1720 │   else:                                                             │
+│ ❱ 1721 │   │   result = torch.relu(input)                                    │
+│   1722 │   return result                                                     │
+│   1723                                                                       │
+│   1724                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+AcceleratorError: CUDA error: no kernel image is available for execution on the 
+device
+Search for `cudaErrorNoKernelImageForDevice' in 
+https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more
+information.
+CUDA kernel errors might be asynchronously reported at some other API call, so 
+the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/evaluation/eva │
+│ luate.py:82 in main                                                          │
+│                                                                              │
+│    79 │   logger.info("Benchmark loaded !")                                  │
+│    80 │   logger.info("Starting evaluation...")                              │
+│    81 │                                                                      │
+│ ❱  82 │   summary, episodes = model.evaluate(                                │
+│    83 │   │   env_factory=benchmark.make_env,                                │
+│    84 │   │   n_episodes=n_episodes,                                         │
+│    85 │   │   seed=seed,                                                     │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:312 in evaluate                                                     │
+│                                                                              │
+│   309 │   │   │   │   final_info: dict = {}                                  │
+│   310 │   │   │   │                                                          │
+│   311 │   │   │   │   while not done:                                        │
+│ ❱ 312 │   │   │   │   │   action = self.act(state, greedy=True)              │
+│   313 │   │   │   │   │   state, _, terminated, truncated, info = env.step(a │
+│   314 │   │   │   │   │   done = terminated or truncated                     │
+│   315 │   │   │   │   │   final_info = info                                  │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:100 in act                                                          │
+│                                                                              │
+│    97 │   │   epsilon = 0.0 if greedy else self.epsilon                      │
+│    98 │   │   if np.random.rand() < epsilon:                                 │
+│    99 │   │   │   return int(np.random.randint(self.n_actions))              │
+│ ❱ 100 │   │   return int(np.argmax(self.get_q(state)))                       │
+│   101 │                                                                      │
+│   102 │   def decrease_epsilon(self) -> None:                                │
+│   103 │   │   """                                                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ model.py:76 in get_q                                                         │
+│                                                                              │
+│    73 │   │   """                                                            │
+│    74 │   │   state_tensor = torch.tensor(state, device=self.device).unsquee │
+│    75 │   │   with torch.no_grad():                                          │
+│ ❱  76 │   │   │   q_values = self.q_net(state_tensor)                        │
+│    77 │   │   return q_values.squeeze(0).detach().cpu().numpy()              │
+│    78 │                                                                      │
+│    79 │   def act(self, state: np.ndarray, greedy: bool = False) -> int:     │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/dqn/ │
+│ network.py:40 in forward                                                     │
+│                                                                              │
+│   37 │   │   torch.Tensor                                                    │
+│   38 │   │   │   Tensor containing one predicted Q-value per action          │
+│   39 │   │   """                                                             │
+│ ❱ 40 │   │   return self.network(x)                                          │
+│   41                                                                         │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/container.py:253 in forward                        │
+│                                                                              │
+│    250 │   │   Runs the forward pass.                                        │
+│    251 │   │   """                                                           │
+│    252 │   │   for module in self:                                           │
+│ ❱  253 │   │   │   input = module(input)                                     │
+│    254 │   │   return input                                                  │
+│    255 │                                                                     │
+│    256 │   def append(self, module: Module) -> Self:                         │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1776 in _wrapped_call_impl               │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/module.py:1787 in _call_impl                       │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/modules/activation.py:143 in forward                       │
+│                                                                              │
+│    140 │   │   """                                                           │
+│    141 │   │   Runs the forward pass.                                        │
+│    142 │   │   """                                                           │
+│ ❱  143 │   │   return F.relu(input, inplace=self.inplace)                    │
+│    144 │                                                                     │
+│    145 │   def extra_repr(self) -> str:                                      │
+│    146 │   │   """                                                           │
+│                                                                              │
+│ /usr/users/rl_course_26/rl_course_26_7/RL-project/.venv/lib/python3.12/site- │
+│ packages/torch/nn/functional.py:1721 in relu                                 │
+│                                                                              │
+│   1718 │   if inplace:                                                       │
+│   1719 │   │   result = torch.relu_(input)                                   │
+│   1720 │   else:                                                             │
+│ ❱ 1721 │   │   result = torch.relu(input)                                    │
+│   1722 │   return result                                                     │
+│   1723                                                                       │
+│   1724                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+AcceleratorError: CUDA error: no kernel image is available for execution on the 
+device
+Search for `cudaErrorNoKernelImageForDevice' in 
+https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more
+information.
+CUDA kernel errors might be asynchronously reported at some other API call, so 
+the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

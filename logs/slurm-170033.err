@@ -1,0 +1,18 @@
+Usage: python -m src.scripts.evaluation.evaluate [OPTIONS]
+Usage: python -m src.scripts.evaluation.evaluate [OPTIONS]
+Try 'python -m src.scripts.evaluation.evaluate --help' for help.
+Try 'python -m src.scripts.evaluation.evaluate --help' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Invalid value for '--model-path' / '-m': File                                │
+│ 'data/training/extension/greedy/seed_2/model_dqn_seed_2.pt' does not exist.  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Usage: python -m src.scripts.evaluation.evaluate [OPTIONS]
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Invalid value for '--model-path' / '-m': File                                │
+│ 'data/training/extension/greedy/seed_0/model_dqn_seed_0.pt' does not exist.  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Try 'python -m src.scripts.evaluation.evaluate --help' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Invalid value for '--model-path' / '-m': File                                │
+│ 'data/training/extension/greedy/seed_1/model_dqn_seed_1.pt' does not exist.  │
+╰──────────────────────────────────────────────────────────────────────────────╯

@@ -19,6 +19,7 @@ while not done:
     obs_flat = obs.flatten()
     action = model.act(obs_flat)
     obs, reward, terminated, truncated, info = env.step(action)
+    print(f"action={action} | speed={info.get('speed', 0):.1f} | lane={info.get('lane_index', '?')}")
     done = terminated or truncated
 
 env.close()

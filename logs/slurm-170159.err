@@ -1,0 +1,36 @@
+[96m[INFO] : Loading model from data/training/extension/security/seed_0/model_dqn_seed_0.pt[0m
+[96m[INFO] : Loading model from data/training/extension/security/seed_1/model_dqn_seed_1.pt[0m
+[96m[INFO] : Loading model from data/training/extension/security/seed_2/model_dqn_seed_2.pt[0m
+[96m[INFO] : Episode 0: reward=17.77 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 0: reward=21.65 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 0: reward=25.10 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 1: reward=7.74 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 1: reward=20.94 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 1: reward=21.16 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 2: reward=20.86 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 2: reward=20.45 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 2: reward=20.98 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 3: reward=20.58 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 3: reward=8.13 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 3: reward=20.54 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 4: reward=12.38 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 4: reward=21.17 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 4: reward=21.20 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 5: reward=20.94 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 5: reward=20.66 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 5: reward=12.68 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 6: reward=21.17 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 6: reward=20.57 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 6: reward=21.17 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 7: reward=20.77 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 7: reward=16.91 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 7: reward=21.44 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 8: reward=21.01 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 8: reward=11.71 crashed=True lane_changes=0[0m
+[96m[INFO] : Episode 8: reward=20.94 crashed=False lane_changes=0[0m
+[96m[INFO] : Episode 9: reward=20.96 crashed=False lane_changes=0[0m
+[96m[INFO] : Summary: {'mean_reward': np.float64(18.8060272611089), 'std_reward': np.float64(4.746820930431119), 'crash_rate': np.float64(0.3), 'offroad_rate': np.float64(0.0), 'mean_speed': np.float64(20.927795598026016), 'mean_lane_changes': np.float64(0.0), 'n_episodes': 10}[0m
+[96m[INFO] : Episode 9: reward=20.63 crashed=False lane_changes=0[0m
+[96m[INFO] : Summary: {'mean_reward': np.float64(19.154797757110632), 'std_reward': np.float64(5.111661279601139), 'crash_rate': np.float64(0.2), 'offroad_rate': np.float64(0.0), 'mean_speed': np.float64(21.462444267797547), 'mean_lane_changes': np.float64(0.0), 'n_episodes': 10}[0m
+[96m[INFO] : Episode 9: reward=21.49 crashed=False lane_changes=0[0m
+[96m[INFO] : Summary: {'mean_reward': np.float64(19.40995451377073), 'std_reward': np.float64(2.8287889190720215), 'crash_rate': np.float64(0.3), 'offroad_rate': np.float64(0.0), 'mean_speed': np.float64(20.774061588363136), 'mean_lane_changes': np.float64(0.0), 'n_episodes': 10}[0m

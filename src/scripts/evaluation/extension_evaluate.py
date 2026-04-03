@@ -1,13 +1,11 @@
 import logging
 from pathlib import Path
 from typing import Annotated
-
+import numpy as np
 import pandas as pd
 import typer
-
 from rl_project.benchmark.benchmark import HighwayBenchmark
 from rl_project.benchmark.typing import BenchmarkConfig
-from rl_project.models.core.typing import ModelType
 from rl_project.models.dqn.model import DQNModel
 from scripts.evaluation.config import DEFAULT_OUTPUT_DIR
 from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
@@ -15,28 +13,11 @@ from scripts.utils.cache import CacheManager
 from scripts.utils.logging_config import setup_logging
 
 logger = logging.getLogger(__name__)
-
 app = typer.Typer(add_completion=False)
 
-
-def get_model_type(model_path: Path) -> ModelType:
-    """
-    Infer the model type from a checkpoint file name
-
-    Parameters
-    ----------
-    model_path : Path
-        Path to the saved model
-
-    Returns
-    -------
-    ModelType
-        Model type extracted from the file name
-    """
-    name = model_path.stem
-    parts = name.split("_")
-    return ModelType(parts[1])
-
+EXTENSION_CONFIGS = {
+    "shared": (SHARED_CORE_ENV_ID, SHARED_CORE_CONFIG),
+}
 
 @app.command()
 def main(
@@ -49,59 +30,89 @@ def main(
     n_episodes: Annotated[int, typer.Option("--n-episodes", "-n", min=1)],
     output_dir: Annotated[Path, typer.Option("--output-dir", "-o")] = DEFAULT_OUTPUT_DIR,
 ) -> None:
-    """
-    Evaluate a saved RL model on the benchmark environment
-
-    Parameters
-    ----------
-    model_path : Path
-        Path to the saved model checkpoint
-    seed : int
-        Base random seed used for reproducible evaluation
-    n_episodes : int
-        Number of evaluation episodes to run
-    output_dir : Path
-        Directory where evaluation outputs are saved
-    """
     setup_logging()
-
     logger.info(f"Loading model from {model_path}")
-    model_type = get_model_type(model_path)
+    model = DQNModel.load(model_path)
 
-    if model_type == ModelType.DQN:
-        model = DQNModel.load(model_path)
-
+    env_id, env_config = EXTENSION_CONFIGS[extension]
     benchmark = HighwayBenchmark(
         config=BenchmarkConfig(
-            env_id=SHARED_CORE_ENV_ID,
-            env_config=SHARED_CORE_CONFIG,
+            env_id=env_id,
+            env_config=env_config,
         ),
     )
-    logger.info("Benchmark loaded !")
-    logger.info("Starting evaluation...")
 
-    summary, episodes = model.evaluate(
-        env_factory=benchmark.make_env,
-        n_episodes=n_episodes,
-        seed=seed,
-    )
+    episodes_data = []
 
-    logger.info(
-        f"Evaluation summary: {summary.to_dict()}",
-    )
+    for ep in range(n_episodes):
+        env = benchmark.make_env(seed=seed + ep)
+        obs, _ = env.reset()
 
-    eval_dir = output_dir / "extension" / extension / model_type.value / f"seed_{seed}"
+        done = False
+        total_reward = 0.0
+        length = 0
+        crashed = False
+        offroad = False
+        speeds = []
+        lane_changes = 0
+        prev_lane = None
+
+        while not done:
+            obs_flat = obs.flatten().astype(np.float32)
+            action = model.act(obs_flat)
+            obs, reward, terminated, truncated, info = env.step(action)
+
+            total_reward += float(reward)
+            length += 1
+            speeds.append(info.get("speed", 0.0))
+
+            # tracker changement de voie
+            current_lane = info.get("lane_index", (0, 0, 0))[2]
+            if prev_lane is not None and current_lane != prev_lane:
+                lane_changes += 1
+            prev_lane = current_lane
+
+            if terminated:
+                crashed = info.get("crashed", False)
+                offroad = info.get("offroad", False)
+
+            done = terminated or truncated
+
+        env.close()
+
+        episodes_data.append({
+            "episode": ep,
+            "seed": seed + ep,
+            "reward": total_reward,
+            "length": length,
+            "crashed": crashed,
+            "offroad": offroad,
+            "mean_speed": float(np.mean(speeds)),
+            "lane_changes": lane_changes,  # ← nouvelle métrique
+        })
+
+        logger.info(f"Episode {ep}: reward={total_reward:.2f} crashed={crashed} lane_changes={lane_changes}")
+
+    # Sauvegarde
+    eval_dir = output_dir / "extension" / extension / f"seed_{seed}"
     eval_dir.mkdir(parents=True, exist_ok=True)
 
-    summary_path = eval_dir / "evaluation_summary.json"
-    CacheManager.save(summary.to_dict(), summary_path)
-    logger.info(f"Saved summary to {summary_path}")
-
-    history_df = pd.DataFrame([ep.to_dict() for ep in episodes])
-    history_path = eval_dir / f"evaluation_history_{model_type.value}_seed_{seed}.csv"
+    history_df = pd.DataFrame(episodes_data)
+    history_path = eval_dir / f"evaluation_history_dqn_seed_{seed}.csv"
     CacheManager.save(history_df, history_path)
-    logger.info(f"Evaluation history saved to {history_path}")
 
+    summary = {
+        "mean_reward": history_df["reward"].mean(),
+        "std_reward": history_df["reward"].std(),
+        "crash_rate": history_df["crashed"].mean(),
+        "offroad_rate": history_df["offroad"].mean(),
+        "mean_speed": history_df["mean_speed"].mean(),
+        "mean_lane_changes": history_df["lane_changes"].mean(),  # ← nouvelle métrique
+        "n_episodes": n_episodes,
+    }
+    summary_path = eval_dir / "evaluation_summary.json"
+    CacheManager.save(summary, summary_path)
+    logger.info(f"Summary: {summary}")
 
 if __name__ == "__main__":
     app()
