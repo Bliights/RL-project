@@ -73,3 +73,4 @@ class EvaluationSummary:
 class ModelType(StrEnum):
     DQN = "dqn"
     SB3 = "sb3"
+    DOUBLE_DQN = "double_dqn"
