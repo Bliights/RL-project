@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/training/train_double_dqn.py", line 14, in <module>
+    from rl_project.models.factory import build_model
+Traceback (most recent call last):
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/factory.py", line 6, in <module>
+  File "<frozen runpy>", line 198, in _run_module_as_main
+    from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
+  File "<frozen runpy>", line 88, in _run_code
+ModuleNotFoundError: No module named 'rl_project.models.dqn.double_dqn_model'
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/training/train_double_dqn.py", line 14, in <module>
+    from rl_project.models.factory import build_model
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/factory.py", line 6, in <module>
+    from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
+ModuleNotFoundError: No module named 'rl_project.models.dqn.double_dqn_model'
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/training/train_double_dqn.py", line 14, in <module>
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/training/train_double_dqn.py", line 14, in <module>
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/training/train_double_dqn.py", line 14, in <module>
+    from rl_project.models.factory import build_model
+    from rl_project.models.factory import build_model
+    from rl_project.models.factory import build_model
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/factory.py", line 6, in <module>
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/factory.py", line 6, in <module>
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/factory.py", line 6, in <module>
+    from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
+    from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
+    from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
+ModuleNotFoundError: No module named 'rl_project.models.dqn.double_dqn_model'
+ModuleNotFoundError: No module named 'rl_project.models.dqn.double_dqn_model'
+ModuleNotFoundError: No module named 'rl_project.models.dqn.double_dqn_model'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/scripts/training/train_double_dqn.py", line 14, in <module>
+    from rl_project.models.factory import build_model
+  File "/usr/users/rl_course_26/rl_course_26_7/RL-project/src/rl_project/models/factory.py", line 6, in <module>
+    from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
+ModuleNotFoundError: No module named 'rl_project.models.dqn.double_dqn_model'
