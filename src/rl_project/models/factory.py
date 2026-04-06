@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from rl_project.models.core.base import BaseRLModel
 from rl_project.models.core.typing import ModelType
 from rl_project.models.dqn.model import DQNModel
@@ -48,5 +50,45 @@ def build_model(
             n_actions=n_actions,
             config=config,
         )
+
+    raise ValueError(f"Unknown model type: {model_type}")
+
+
+def load_model(
+    model_type: ModelType,
+    model_path: str | Path,
+) -> BaseRLModel:
+    """
+    Load the RL model from the path
+
+    Parameters
+    ----------
+    model_type : ModelType
+        Type of model to instantiate
+    model_path : str | Path
+        Path of the model file
+
+    Returns
+    -------
+    BaseRLModel
+        Instantiated RL model
+
+    Raises
+    ------
+    FileNotFoundError
+        If the provided model file is not found
+    ValueError
+        If the provided model type is not supported
+    """
+    model_path = Path(model_path)
+
+    if not model_path.exists():
+        raise FileNotFoundError(f"Model file not found: {model_path}")
+
+    if model_type == ModelType.DQN:
+        return DQNModel.load(model_path)
+
+    if model_type == ModelType.SB3:
+        return SB3Model.load(model_path)
 
     raise ValueError(f"Unknown model type: {model_type}")

@@ -1,20 +1,26 @@
-from collections.abc import Callable
 from pathlib import Path
 
 import gymnasium as gym
 import numpy as np
+import torch
 
 from rl_project.models.core.base import BaseRLModel
 from rl_project.models.core.typing import (
     EpisodeEvaluation,
     EvaluationSummary,
-    TrainingEpisodeMetrics,
+    TrainingStepMetrics,
 )
 from rl_project.models.sb3.typing import SB3Config
 
 
 class SB3Model(BaseRLModel):
-    def __init__(self, obs_dim: int, n_actions: int, config: SB3Config) -> None:
+    def __init__(
+        self,
+        obs_dim: int,
+        n_actions: int,
+        config: SB3Config,
+        device: torch.device | str | None = None,
+    ) -> None:
         """
         Initialize the SB3 model wrapper
 
@@ -26,8 +32,10 @@ class SB3Model(BaseRLModel):
             Number of discrete actions available in the environment
         config : SB3Config
             configuration associated with the SB3 model
+        device : torch.device | str | None
+            CPU or GPU
         """
-        super().__init__(obs_dim=obs_dim, n_actions=n_actions)
+        super().__init__(obs_dim=obs_dim, n_actions=n_actions, device=device)
         self.config = config
 
     def act(self, state: np.ndarray, greedy: bool = False) -> int:
@@ -48,48 +56,70 @@ class SB3Model(BaseRLModel):
         """
         raise NotImplementedError("SB3 model not implemented yet.")
 
-    def fit(self, env: gym.Env, output_dir: Path, seed: int) -> list[TrainingEpisodeMetrics]:
+    def fit(
+        self,
+        env: gym.Env,
+        output_dir: Path,
+        seed: int,
+        n_steps: int,
+        checkpoint_every_episodes: int,
+        eval_every_episodes: int,
+        eval_episodes: int,
+    ) -> list[TrainingStepMetrics]:
         """
-        Train the model on the provided environment
+        Train the SB3 agent on the given environment
 
         Parameters
         ----------
         env : gym.Env
-            Gymnasium environment used for training
+            Training environment
         output_dir : Path
-            Directory where training checkpoints should be saved
+            Directory where checkpoints are saved
         seed : int
-            Random seed used for reproducibility
+            Base random seed used to initialize episodes reproducibly
+        n_steps : int
+            Number of training environment steps / timesteps
+        checkpoint_every_episodes : int
+            Save a regular checkpoint every X completed episodes
+        eval_every_episodes : int
+            Run evaluation every X completed episodes
+        eval_episodes : int
+            Number of greedy evaluation episodes
 
         Returns
         -------
-        list[TrainingEpisodeMetrics]
-            List of training metrics collected at the episode level
+        list[TrainingStepMetrics]
+            Step-level training metrics collected throughout training
         """
         raise NotImplementedError("SB3 model not implemented yet.")
 
     def evaluate(
         self,
-        env_factory: Callable[[int], gym.Env],
+        env: gym.Env,
         n_episodes: int,
         seed: int,
+        verbose: bool = False,
     ) -> tuple[EvaluationSummary, list[EpisodeEvaluation]]:
         """
-        Evaluate the policy over several episodes
+        Evaluate the trained policy over multiple episodes (It is performed greedily,
+        without exploration)
 
         Parameters
         ----------
-        env_factory : Callable[[int], gym.Env]
-            Factory function that creates a fresh environment from a given seed
+        env: gym.Env
+            Evaluation environment
         n_episodes : int
             Number of evaluation episodes to run
         seed : int
-            Base random seed used for reproducible evaluation
+            Base random seed used to derive episode seeds
+        verbose : bool
+            To enable or disable the display
 
         Returns
         -------
         tuple[EvaluationSummary, list[EpisodeEvaluation]]
-            Aggregated evaluation metrics and per-episode evaluation results
+            A tuple containing the aggregated evaluation summary and the list
+            of per-episode evaluation results
         """
         raise NotImplementedError("SB3 model not implemented yet.")
 

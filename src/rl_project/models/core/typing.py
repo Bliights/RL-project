@@ -3,16 +3,14 @@ from enum import StrEnum
 
 
 @dataclass(slots=True)
-class TrainingEpisodeMetrics:
+class TrainingStepMetrics:
+    step: int
     episode: int
+    step_in_episode: int
     reward: float
-    length: int
-    crashed: int
-    offroad: int
-    mean_speed: float
-    epsilon: float | None
-    loss: float | None
-    total_steps: int | None
+    crashed: bool
+    offroad: bool
+    speed: float
 
     def to_dict(self) -> dict:
         """

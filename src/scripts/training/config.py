@@ -12,9 +12,9 @@ DEFAULT_DQN_CONFIG = DQNConfig(
     epsilon_min=0.05,
     learning_rate=1e-3,
     hidden_size=128,
-    num_episodes=300,
-    checkpoint_every=50,
-    eval_episodes=50,
 )
 
 DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[3] / "data" / "training"
+DEFAULT_CHECKPOINT_EVERY_EPISODES = 500
+DEFAULT_EVAL_EVERY_EPISODES = 500
+DEFAULT_EVAL_EPISODES = 10
