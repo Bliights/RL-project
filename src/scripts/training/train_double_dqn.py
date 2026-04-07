@@ -48,7 +48,9 @@ def main(
     set_global_seed(seed)
 
     if config not in DOUBLE_DQN_CONFIGS:
-        raise ValueError(f"Config '{config}' inconnue. Choisis parmi : {list(DOUBLE_DQN_CONFIGS.keys())}")
+        raise ValueError(
+            f"Config '{config}' inconnue. Choisis parmi : {list(DOUBLE_DQN_CONFIGS.keys())}"
+        )
 
     env_id, env_config = DOUBLE_DQN_CONFIGS[config]
     logger.info(f"Starting Double DQN training config={config} seed={seed}")

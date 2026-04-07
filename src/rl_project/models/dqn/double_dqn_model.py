@@ -7,7 +7,7 @@ from rl_project.models.dqn.model import DQNModel
 class DoubleDQNModel(DQNModel):
     """
     Double DQN model — identical to DQN except for the target computation.
-    
+
     In standard DQN, the same network selects AND evaluates the next action,
     leading to overestimation bias. Double DQN fixes this by:
     - Using q_net to SELECT the best next action
@@ -49,7 +49,7 @@ class DoubleDQNModel(DQNModel):
             # Double DQN : q_net choisit l'action, target_net l'évalue
             next_actions = self.q_net(next_state_batch).argmax(1, keepdim=True)
             next_state_values = (1.0 - terminated_batch) * self.target_net(
-                next_state_batch
+                next_state_batch,
             ).gather(1, next_actions).squeeze(1)
             targets = reward_batch + self.config.gamma * next_state_values
 

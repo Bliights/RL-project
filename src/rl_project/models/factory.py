@@ -1,9 +1,9 @@
 from rl_project.models.core.base import BaseRLModel
 from rl_project.models.core.typing import ModelType
+from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
 from rl_project.models.dqn.model import DQNModel
 from rl_project.models.dqn.typing import DQNConfig
 from rl_project.models.sb3.model import SB3Model
-from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
 
 
 def build_model(

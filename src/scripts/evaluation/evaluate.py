@@ -8,12 +8,12 @@ import typer
 from rl_project.benchmark.benchmark import HighwayBenchmark
 from rl_project.benchmark.typing import BenchmarkConfig
 from rl_project.models.core.typing import ModelType
+from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
 from rl_project.models.dqn.model import DQNModel
 from scripts.evaluation.config import DEFAULT_OUTPUT_DIR
 from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
 from scripts.utils.cache import CacheManager
 from scripts.utils.logging_config import setup_logging
-from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
 
 logger = logging.getLogger(__name__)
 

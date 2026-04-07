@@ -14,10 +14,10 @@ from rl_project.models.core.typing import ModelType
 from rl_project.models.factory import build_model
 from scripts.training.config import DEFAULT_DQN_CONFIG, DEFAULT_OUTPUT_DIR
 from scripts.utils.benchmark_config_extension import (
+    EXTENSION_DENSE_TRAFFIC_CONFIG,
     EXTENSION_ENV_ID,
     EXTENSION_GREEDY_PASSING_CONFIG,
     EXTENSION_SECURITY_PASSING_CONFIG,
-    EXTENSION_DENSE_TRAFFIC_CONFIG,
 )
 from scripts.utils.cache import CacheManager
 from scripts.utils.logging_config import setup_logging
@@ -29,7 +29,7 @@ app = typer.Typer(add_completion=False)
 EXTENSION_CONFIGS = {
     "greedy": EXTENSION_GREEDY_PASSING_CONFIG,
     "security": EXTENSION_SECURITY_PASSING_CONFIG,
-    "dense" : EXTENSION_DENSE_TRAFFIC_CONFIG,
+    "dense": EXTENSION_DENSE_TRAFFIC_CONFIG,
 }
 
 

@@ -19,8 +19,8 @@ EXTENSION_SECURITY_PASSING_CONFIG = {
 
 EXTENSION_DENSE_TRAFFIC_CONFIG = {
     **EXTENSION_GREEDY_PASSING_CONFIG,  # hérite du greedy
-    "vehicles_count": 70,               # plus de voitures
-    "vehicles_density": 1.5,            # trafic plus dense
-    "high_speed_reward": 1.2,           # baseline=0.7, on encourage plus la vitesse
-    "lane_change_reward": 0.2,          # on augmente un peu le bonus dépassement
+    "vehicles_count": 70,  # plus de voitures
+    "vehicles_density": 1.5,  # trafic plus dense
+    "high_speed_reward": 1.2,  # baseline=0.7, on encourage plus la vitesse
+    "lane_change_reward": 0.2,  # on augmente un peu le bonus dépassement
 }

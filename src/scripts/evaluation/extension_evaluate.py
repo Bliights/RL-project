@@ -1,9 +1,11 @@
 import logging
 from pathlib import Path
 from typing import Annotated
+
 import numpy as np
 import pandas as pd
 import typer
+
 from rl_project.benchmark.benchmark import HighwayBenchmark
 from rl_project.benchmark.typing import BenchmarkConfig
 from rl_project.models.dqn.model import DQNModel
@@ -18,6 +20,7 @@ app = typer.Typer(add_completion=False)
 EXTENSION_CONFIGS = {
     "shared": (SHARED_CORE_ENV_ID, SHARED_CORE_CONFIG),
 }
+
 
 @app.command()
 def main(
@@ -80,18 +83,22 @@ def main(
 
         env.close()
 
-        episodes_data.append({
-            "episode": ep,
-            "seed": seed + ep,
-            "reward": total_reward,
-            "length": length,
-            "crashed": crashed,
-            "offroad": offroad,
-            "mean_speed": float(np.mean(speeds)),
-            "lane_changes": lane_changes,  # ← nouvelle métrique
-        })
+        episodes_data.append(
+            {
+                "episode": ep,
+                "seed": seed + ep,
+                "reward": total_reward,
+                "length": length,
+                "crashed": crashed,
+                "offroad": offroad,
+                "mean_speed": float(np.mean(speeds)),
+                "lane_changes": lane_changes,  # ← nouvelle métrique
+            }
+        )
 
-        logger.info(f"Episode {ep}: reward={total_reward:.2f} crashed={crashed} lane_changes={lane_changes}")
+        logger.info(
+            f"Episode {ep}: reward={total_reward:.2f} crashed={crashed} lane_changes={lane_changes}"
+        )
 
     # Sauvegarde
     eval_dir = output_dir / "extension" / extension / f"seed_{seed}"
@@ -113,6 +120,7 @@ def main(
     summary_path = eval_dir / "evaluation_summary.json"
     CacheManager.save(summary, summary_path)
     logger.info(f"Summary: {summary}")
+
 
 if __name__ == "__main__":
     app()
