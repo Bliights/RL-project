@@ -41,17 +41,25 @@ make pre-commit
 ### Training
 To reproduce the project results you can run the training scripts for the type of model [`(ModelType)`](./src/rl_project/models/core/typing.py) you want to train. To do this you can run the following command:
 ```bash
-make training SEED=YourSeed MODEL=YourModelType OUTPUT_DIR=YourOutputDir
+make training SEED=YourSeed MODEL=YourModelType N_STEP=NumberOfSteps
 ```
-For information there is a default OUTPUT_DIR which is [`./data/training/`](./data/training/)
+For more information on all the parameters possible, you can see the help of the command with:
+```bash
+make training HELP=1
+```
+**Note**: To use an option use the full name of the option in capital letters, for example : --n_step $\rightarrow$ N_STEP
 
 
 ### Evaluation
 Finally, to evaluate a model on a fixed number of episodes you can run the following command:
 ```bash
-make evaluation MODEL_PATH=YourModelPath SEED=YourSeed N=NumberOfEpisodes OUTPUT_DIR=YourOutputDir
+make evaluation MODEL_PATH=YourModelPath SEED=YourSeed N=NumberOfEpisodes
 ```
-For information there is a default OUTPUT_DIR which is [`./data/evaluation/`](./data/evaluation/)
+For more information on all the parameters possible, you can see the help of the command with:
+```bash
+make evaluation HELP=1
+```
+**Note**: To use an option use the full name of the option in capital letters, for example : --model-path $\rightarrow$ MODEL_PATH
 
 ## Project Structure
 This repository is organized like a typical Python package so that you can reuse the structure easily for future projects. You will then find 
