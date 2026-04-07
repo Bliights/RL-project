@@ -12,7 +12,7 @@ DEFAULT_DQN_CONFIG = DQNConfig(
     epsilon_min=0.05,
     learning_rate=1e-3,
     hidden_size=128,
-    num_episodes=300,
+    num_episodes=12000,
     checkpoint_every=50,
     eval_episodes=50,
 )
