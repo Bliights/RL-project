@@ -13,11 +13,12 @@ from rl_project.models.core.typing import (
     EpisodeEvaluation,
     EvaluationSummary,
     ModelType,
+    TrainingState,
     TrainingStepMetrics,
 )
 from rl_project.models.dqn.buffer import ReplayBuffer
 from rl_project.models.dqn.network import QNetwork
-from rl_project.models.dqn.typing import DQNConfig, TrainingState
+from rl_project.models.dqn.typing import DQNConfig
 
 logger = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ class DQNModel(BaseRLModel):
         self.epsilon = self.config.epsilon_start
         self.training_state = TrainingState(
             base_seed=-1,
-            completed_steps=0,
+            completed_steps=-1,
             completed_episodes=0,
             episode=0,
             step_in_episode=-1,
@@ -416,7 +417,7 @@ class DQNModel(BaseRLModel):
             current_seed = seed + episode_idx
             state, _ = env.reset(seed=current_seed)
             done = False
-            final_info: dict = {}
+            final_info = {}
 
             while not done:
                 action = self.act(state, greedy=True)

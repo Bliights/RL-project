@@ -5,13 +5,14 @@ from rl_project.models.core.typing import ModelType
 from rl_project.models.dqn.model import DQNModel
 from rl_project.models.dqn.typing import DQNConfig
 from rl_project.models.sb3.model import SB3Model
+from rl_project.models.sb3.typing import SB3Config
 
 
 def build_model(
     model_type: ModelType,
     obs_dim: int,
     n_actions: int,
-    config: DQNConfig,
+    config: DQNConfig | SB3Config,
 ) -> BaseRLModel:
     """
     Build a RL model from the requested model type
@@ -24,7 +25,7 @@ def build_model(
         Dimension of the input observation vector
     n_actions : int
         Number of discrete actions available in the environment
-    config : DQNConfig
+    config : DQNConfig | SB3Config
         Configuration object used to initialize the model
 
     Returns
@@ -34,10 +35,14 @@ def build_model(
 
     Raises
     ------
+    TypeError
+        If the config is not adapted to the model
     ValueError
         If the provided model type is not supported
     """
     if model_type == ModelType.DQN:
+        if not isinstance(config, DQNConfig):
+            raise TypeError("DQN model requires a DQNConfig.")
         return DQNModel(
             obs_dim=obs_dim,
             n_actions=n_actions,
@@ -45,6 +50,8 @@ def build_model(
         )
 
     if model_type == ModelType.SB3:
+        if not isinstance(config, SB3Config):
+            raise TypeError("SB3 model requires a SB3Config.")
         return SB3Model(
             obs_dim=obs_dim,
             n_actions=n_actions,

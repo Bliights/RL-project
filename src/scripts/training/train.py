@@ -18,6 +18,7 @@ from scripts.training.config import (
     DEFAULT_EVAL_EPISODES,
     DEFAULT_EVAL_EVERY_EPISODES,
     DEFAULT_OUTPUT_DIR,
+    DEFAULT_SB3_CONFIG,
 )
 from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
 from scripts.utils.cache import CacheManager
@@ -146,7 +147,7 @@ def main(
         if model == ModelType.DQN:
             config = DEFAULT_DQN_CONFIG
         elif model == ModelType.SB3:
-            config = None
+            config = DEFAULT_SB3_CONFIG
         else:
             raise ValueError(f"Unsupported model type: {model}")
 
