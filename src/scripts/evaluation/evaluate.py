@@ -13,6 +13,7 @@ from scripts.evaluation.config import DEFAULT_OUTPUT_DIR
 from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
 from scripts.utils.cache import CacheManager
 from scripts.utils.logging_config import setup_logging
+from rl_project.models.dqn.double_dqn_model import DoubleDQNModel
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +35,8 @@ def get_model_type(model_path: Path) -> ModelType:
         Model type extracted from the file name
     """
     name = model_path.stem
+    if "double_dqn" in name:
+        return ModelType.DOUBLE_DQN
     parts = name.split("_")
     return ModelType(parts[1])
 
@@ -69,6 +72,8 @@ def main(
 
     if model_type == ModelType.DQN:
         model = DQNModel.load(model_path)
+    elif model_type == ModelType.DOUBLE_DQN:
+        model = DoubleDQNModel.load(model_path)
 
     benchmark = HighwayBenchmark(
         config=BenchmarkConfig(
