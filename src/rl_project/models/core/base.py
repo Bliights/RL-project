@@ -86,6 +86,7 @@ class BaseRLModel(ABC):
         seed: int,
         n_steps: int,
         checkpoint_every_episodes: int,
+        training_info: str,
         eval_every_episodes: int,
         eval_episodes: int,
     ) -> list[TrainingStepMetrics]:
@@ -104,6 +105,8 @@ class BaseRLModel(ABC):
             Number of training environment steps / timesteps
         checkpoint_every_episodes : int
             Save a regular checkpoint every X completed episodes
+        training_info : str
+            String of the training info
         eval_every_episodes : int
             Run evaluation every X completed episodes
         eval_episodes : int

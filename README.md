@@ -41,13 +41,13 @@ make pre-commit
 ### Training
 To reproduce the project results you can run the training scripts for the type of model [`(ModelType)`](./src/rl_project/models/core/typing.py) you want to train. To do this you can run the following command:
 ```bash
-make training SEED=YourSeed MODEL=YourModelType N_STEP=NumberOfSteps
+make training SEED=YourSeed MODEL=YourModelType ENV_TYPE=YourEnvType N_STEPS=NumberOfSteps
 ```
 For more information on all the parameters possible, you can see the help of the command with:
 ```bash
 make training HELP=1
 ```
-**Note**: To use an option use the full name of the option in capital letters, for example : --n_step $\rightarrow$ N_STEP
+**Note**: To use an option use the full name of the option in capital letters, for example : --n_steps $\rightarrow$ N_STEPS
 
 
 ### Evaluation

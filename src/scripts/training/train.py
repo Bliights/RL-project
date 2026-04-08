@@ -12,6 +12,8 @@ from rl_project.benchmark.benchmark import HighwayBenchmark
 from rl_project.benchmark.typing import BenchmarkConfig
 from rl_project.models.core.typing import ModelType
 from rl_project.models.factory import build_model, load_model
+from scripts.envs.factory import get_env_config
+from scripts.envs.typing import EnvType
 from scripts.training.config import (
     DEFAULT_CHECKPOINT_EVERY_EPISODES,
     DEFAULT_DQN_CONFIG,
@@ -20,7 +22,6 @@ from scripts.training.config import (
     DEFAULT_OUTPUT_DIR,
     DEFAULT_SB3_CONFIG,
 )
-from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
 from scripts.utils.cache import CacheManager
 from scripts.utils.logging_config import setup_logging
 
@@ -50,6 +51,10 @@ def main(
     model: Annotated[
         ModelType,
         typer.Option("--model", "-m", help="Type of model to use for the training"),
+    ],
+    env_type: Annotated[
+        EnvType,
+        typer.Option("--env-type", "-e", help="Environment config to use for the training"),
     ],
     seed: Annotated[int, typer.Option("--seed", "-s", help="Base seed to use for the training")],
     n_steps: Annotated[
@@ -104,6 +109,8 @@ def main(
     ----------
     model : ModelType
         Type of RL model to train
+    env : EnvType
+        Environment config to use for the training
     seed : int
         Random seed used for reproducibility
     n_steps : int
@@ -122,12 +129,14 @@ def main(
     setup_logging()
     set_global_seed(seed)
 
-    logger.info(f"Starting training with model={model.value} seed={seed}")
+    logger.info(f"Starting training with model={model.value} seed={seed} env_type={env_type.value}")
+
+    env_id, env_config = get_env_config(env_type)
 
     benchmark = HighwayBenchmark(
         config=BenchmarkConfig(
-            env_id=SHARED_CORE_ENV_ID,
-            env_config=SHARED_CORE_CONFIG,
+            env_id=env_id,
+            env_config=env_config,
         ),
     )
     env = benchmark.make_env(seed=seed)
@@ -148,6 +157,8 @@ def main(
             config = DEFAULT_DQN_CONFIG
         elif model == ModelType.SB3:
             config = DEFAULT_SB3_CONFIG
+            config.eval_env_id = env_id
+            config.eval_env_config = env_config
         else:
             raise ValueError(f"Unsupported model type: {model}")
 
@@ -159,7 +170,7 @@ def main(
         )
         logger.info("New model created !")
 
-    train_dir = output_dir / model.value / f"seed_{seed}"
+    train_dir = output_dir / model.value / env_type.value / f"seed_{seed}"
     train_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info(f"Start of training for {n_steps} steps...")
@@ -170,18 +181,19 @@ def main(
         seed=seed,
         n_steps=n_steps,
         checkpoint_every_episodes=checkpoint_every_episodes,
+        training_info=f"{model.value}_{env_type.value}_seed_{seed}",
         eval_every_episodes=eval_every_episodes,
         eval_episodes=eval_episodes,
     )
 
     logger.info("Training finished !")
 
-    final_model_path = train_dir / f"model_{model.value}_seed_{seed}_final.pt"
+    final_model_path = train_dir / f"model_{model.value}_{env_type.value}_seed_{seed}_final.pt"
     rl_model.save(final_model_path)
     logger.info(f"Final model saved to {final_model_path}")
 
     history_df = pd.DataFrame([step.to_dict() for step in history])
-    history_path = train_dir / f"training_history_{model.value}_seed_{seed}.csv"
+    history_path = train_dir / f"training_history_{model.value}_{env_type.value}_seed_{seed}.csv"
     CacheManager.save(history_df, history_path)
     logger.info(
         f"Training history saved to {history_path}",

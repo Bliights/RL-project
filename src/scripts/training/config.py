@@ -2,7 +2,6 @@ from pathlib import Path
 
 from rl_project.models.dqn.typing import DQNConfig
 from rl_project.models.sb3.typing import SB3Config
-from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
 
 DEFAULT_DQN_CONFIG = DQNConfig(
     gamma=0.99,
@@ -32,8 +31,8 @@ DEFAULT_SB3_CONFIG = SB3Config(
     exploration_final_eps=0.05,
     net_arch=[256, 256],
     verbose=0,
-    eval_env_id=SHARED_CORE_ENV_ID,
-    eval_env_config=SHARED_CORE_CONFIG,
+    eval_env_id="",
+    eval_env_config={},
     eval_render_mode="rgb_array",
 )
 

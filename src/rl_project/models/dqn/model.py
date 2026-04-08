@@ -246,6 +246,7 @@ class DQNModel(BaseRLModel):
         seed: int,
         n_steps: int,
         checkpoint_every_episodes: int,
+        training_info: str,
         eval_every_episodes: int,
         eval_episodes: int,
     ) -> list[TrainingStepMetrics]:
@@ -264,6 +265,8 @@ class DQNModel(BaseRLModel):
             Number of training environment steps / timesteps
         checkpoint_every_episodes : int
             Save a regular checkpoint every X completed episodes
+        training_info : str
+            String of the training info
         eval_every_episodes : int
             Run evaluation every X completed episodes
         eval_episodes : int
@@ -336,7 +339,7 @@ class DQNModel(BaseRLModel):
                     ):
                         checkpoint_path = (
                             checkpoint_dir
-                            / f"checkpoint_{self.type}_seed_{seed}_episode_{self.training_state.completed_episodes}.pt"
+                            / f"checkpoint_{training_info}_episode_{self.training_state.completed_episodes}.pt"
                         )
                         self.save(checkpoint_path)
 
@@ -358,7 +361,7 @@ class DQNModel(BaseRLModel):
 
                         if summary.mean_reward > self.training_state.best_mean_reward:
                             self.training_state.best_mean_reward = summary.mean_reward
-                            best_model_path = output_dir / f"model_{self.type}_seed_{seed}_best.pt"
+                            best_model_path = output_dir / f"model_{training_info}_best.pt"
                             self.save(best_model_path)
 
                     state, _ = env.reset(

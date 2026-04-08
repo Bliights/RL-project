@@ -139,6 +139,7 @@ class SB3Model(BaseRLModel):
         seed: int,
         n_steps: int,
         checkpoint_every_episodes: int,
+        training_info: str,
         eval_every_episodes: int,
         eval_episodes: int,
     ) -> list[TrainingStepMetrics]:
@@ -157,6 +158,8 @@ class SB3Model(BaseRLModel):
             Number of training environment steps / timesteps
         checkpoint_every_episodes : int
             Save a regular checkpoint every X completed episodes
+        training_info : str
+            String of the training info
         eval_every_episodes : int
             Run evaluation every X completed episodes
         eval_episodes : int
@@ -182,6 +185,7 @@ class SB3Model(BaseRLModel):
             output_dir=output_dir,
             seed=seed,
             checkpoint_every_episodes=checkpoint_every_episodes,
+            training_info=training_info,
             eval_every_episodes=eval_every_episodes,
             eval_episodes=eval_episodes,
         )

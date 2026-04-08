@@ -22,6 +22,7 @@ class SB3TrainingCallback(BaseCallback):
         output_dir: Path,
         seed: int,
         checkpoint_every_episodes: int,
+        training_info: str,
         eval_every_episodes: int,
         eval_episodes: int,
     ) -> None:
@@ -40,6 +41,8 @@ class SB3TrainingCallback(BaseCallback):
             Random seed used for reproducibility
         checkpoint_every_episodes : int
             Save a regular checkpoint every X completed episodes
+        training_info : str
+            String of the training info
         eval_every_episodes : int
             Run evaluation every X completed episodes
         eval_episodes : int
@@ -51,6 +54,7 @@ class SB3TrainingCallback(BaseCallback):
         self.output_dir = output_dir
         self.seed = seed
         self.checkpoint_every_episodes = checkpoint_every_episodes
+        self.training_info = training_info
         self.eval_every_episodes = eval_every_episodes
         self.eval_episodes = eval_episodes
 
@@ -95,7 +99,7 @@ class SB3TrainingCallback(BaseCallback):
             ):
                 checkpoint_path = (
                     self.checkpoint_dir
-                    / f"checkpoint_{self.owner.type}_seed_{self.seed}_episode_{self.owner.training_state.completed_episodes}.pt"
+                    / f"checkpoint_{self.training_info}_episode_{self.owner.training_state.completed_episodes}.pt"
                 )
                 self.owner.save(checkpoint_path)
 
@@ -112,9 +116,7 @@ class SB3TrainingCallback(BaseCallback):
                 )
                 if summary.mean_reward > self.owner.training_state.best_mean_reward:
                     self.owner.training_state.best_mean_reward = summary.mean_reward
-                    best_path = (
-                        self.output_dir / f"model_{self.owner.type}_seed_{self.seed}_best.pt"
-                    )
+                    best_path = self.output_dir / f"model_{self.training_info}_best.pt"
                     self.owner.save(best_path)
 
         return True
