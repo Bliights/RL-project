@@ -6,7 +6,7 @@ Transition = tuple[
     torch.Tensor,  # state
     torch.Tensor,  # action
     torch.Tensor,  # reward
-    torch.Tensor,  # terminated
+    torch.Tensor,  # done
     torch.Tensor,  # next_state
 ]
 
@@ -30,7 +30,7 @@ class ReplayBuffer:
         state: torch.Tensor,
         action: torch.Tensor,
         reward: torch.Tensor,
-        terminated: torch.Tensor,
+        done: torch.Tensor,
         next_state: torch.Tensor,
     ) -> None:
         """
@@ -44,8 +44,8 @@ class ReplayBuffer:
             Action taken in the current state
         reward : torch.Tensor
             Reward received after taking the action
-        terminated : torch.Tensor
-            Termination flag indicating whether the transition leads to a terminal state
+        done : torch.Tensor
+            Termination flag indicating whether the transition leads to a terminal state/limit
         next_state : torch.Tensor
             Tensor representation of the next state
         """
@@ -56,7 +56,7 @@ class ReplayBuffer:
             state,
             action,
             reward,
-            terminated,
+            done,
             next_state,
         )
         self.position = (self.position + 1) % self.capacity
@@ -90,3 +90,31 @@ class ReplayBuffer:
             Number of transitions currently available in the buffer
         """
         return len(self.memory)
+
+    def state_dict(self) -> dict:
+        """
+        Return a dictionnary of a buffer instance
+
+        Returns
+        -------
+        dict
+            The instance
+        """
+        return {
+            "capacity": self.capacity,
+            "memory": self.memory,
+            "position": self.position,
+        }
+
+    def load_state_dict(self, state_dict: dict) -> None:
+        """
+        Load a buffer from a dictionnary
+
+        Parameters
+        ----------
+        state_dict : dict
+            The dictionnary used for the loading
+        """
+        self.capacity = int(state_dict["capacity"])
+        self.memory = state_dict["memory"]
+        self.position = int(state_dict["position"])

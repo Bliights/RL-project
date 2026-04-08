@@ -1,6 +1,4 @@
-SHARED_CORE_ENV_ID = "highway-v0"
-
-SHARED_CORE_CONFIG = {
+BASELINE_CONFIG = {
     "observation": {
         "type": "Kinematics",
         "vehicles_count": 10,

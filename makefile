@@ -31,10 +31,16 @@ pre-commit:
 # ------------------- Script -------------------
 training:
 	uv run python -m src.scripts.training.train \
-		$(if $(SEED),--seed $(SEED)) \
 		$(if $(MODEL),--model $(MODEL)) \
+		$(if $(ENV_TYPE),--env-type $(ENV_TYPE)) \
+		$(if $(SEED),--seed $(SEED)) \
+		$(if $(N_STEPS),--n-steps $(N_STEPS)) \
+		$(if $(CHECKPOINT_EVERY_EPISODES),--checkpoint-every-episodes $(CHECKPOINT_EVERY_EPISODES)) \
+		$(if $(EVAL_EVERY_EPISODES),--eval-every-episodes $(EVAL_EVERY_EPISODES)) \
+		$(if $(EVAL_EPISODES),--eval-episodes $(EVAL_EPISODES)) \
 		$(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR)) \
-		$(if $(HELP),--help)
+		$(if $(RESUME_FROM),--resume-from $(RESUME_FROM)) \
+		$(if $(HELP),--help) 
 
 evaluation:
 	uv run python -m src.scripts.evaluation.evaluate \

@@ -155,20 +155,19 @@ class EpisodeMetricsWrapper(Wrapper):
             Observation, reward, termination flag, truncation flag, and enriched info dictionary
         """
         observation, reward, terminated, truncated, info = self.env.step(action)
-
         self.episode_reward += float(reward)
         self.episode_length += 1
         self.step_speeds.append(float(info.get("speed", 0.0)))
 
+        enriched_info = dict(info)
+        rewards_info = enriched_info.get("rewards", {})
+        enriched_info["offroad"] = float(rewards_info.get("on_road_reward", 1.0)) == 0.0
+
         if terminated or truncated:
-            enriched_info = dict(info)
             enriched_info["episode_reward"] = self.episode_reward
             enriched_info["episode_length"] = self.episode_length
-            enriched_info["crashed"] = bool(info.get("crashed", False))
-            enriched_info["offroad"] = not bool(info.get("on_road", True))
             enriched_info["mean_speed"] = (
                 float(np.mean(self.step_speeds)) if self.step_speeds else 0.0
             )
-            return observation, float(reward), terminated, truncated, enriched_info
 
-        return observation, float(reward), terminated, truncated, info
+        return observation, float(reward), terminated, truncated, enriched_info

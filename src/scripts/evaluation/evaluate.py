@@ -8,9 +8,10 @@ import typer
 from rl_project.benchmark.benchmark import HighwayBenchmark
 from rl_project.benchmark.typing import BenchmarkConfig
 from rl_project.models.core.typing import ModelType
-from rl_project.models.dqn.model import DQNModel
+from rl_project.models.factory import load_model
+from scripts.envs.factory import get_env_config
+from scripts.envs.typing import EnvType
 from scripts.evaluation.config import DEFAULT_OUTPUT_DIR
-from scripts.utils.benchmark_config import SHARED_CORE_CONFIG, SHARED_CORE_ENV_ID
 from scripts.utils.cache import CacheManager
 from scripts.utils.logging_config import setup_logging
 
@@ -38,15 +39,56 @@ def get_model_type(model_path: Path) -> ModelType:
     return ModelType(parts[1])
 
 
-@app.command()
+def get_env_type(model_path: Path) -> EnvType:
+    """
+    Infer the env type from a checkpoint file name
+
+    Parameters
+    ----------
+    model_path : Path
+        Path to the saved model
+
+    Returns
+    -------
+    EnvType
+        Env type extracted from the file name
+    """
+    name = model_path.stem
+    parts = name.split("_")
+    return EnvType(parts[2])
+
+
+@app.command(help="")
 def main(
     model_path: Annotated[
         Path,
-        typer.Option("--model-path", "-m", exists=True, file_okay=True, dir_okay=False),
+        typer.Option(
+            "--model-path",
+            "-m",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            help="Path of the model to use for the evaluation",
+        ),
     ],
-    seed: Annotated[int, typer.Option("--seed", "-s")],
-    n_episodes: Annotated[int, typer.Option("--n-episodes", "-n", min=1)],
-    output_dir: Annotated[Path, typer.Option("--output-dir", "-o")] = DEFAULT_OUTPUT_DIR,
+    seed: Annotated[int, typer.Option("--seed", "-s", help="Base seed to use for the evaluation")],
+    n_episodes: Annotated[
+        int,
+        typer.Option(
+            "--n-episodes",
+            "-n",
+            min=1,
+            help="Number of episodes to do for the evaluation",
+        ),
+    ],
+    output_dir: Annotated[
+        Path,
+        typer.Option(
+            "--output-dir",
+            "-o",
+            help="Path to the output directory for the results",
+        ),
+    ] = DEFAULT_OUTPUT_DIR,
 ) -> None:
     """
     Evaluate a saved RL model on the benchmark environment
@@ -66,30 +108,33 @@ def main(
 
     logger.info(f"Loading model from {model_path}")
     model_type = get_model_type(model_path)
+    env_type = get_env_type(model_path)
+    model = load_model(model_type, model_path)
 
-    if model_type == ModelType.DQN:
-        model = DQNModel.load(model_path)
+    env_id, env_config = get_env_config(env_type)
 
     benchmark = HighwayBenchmark(
         config=BenchmarkConfig(
-            env_id=SHARED_CORE_ENV_ID,
-            env_config=SHARED_CORE_CONFIG,
+            env_id=env_id,
+            env_config=env_config,
         ),
     )
+    env = benchmark.make_env(seed=seed)
     logger.info("Benchmark loaded !")
     logger.info("Starting evaluation...")
 
     summary, episodes = model.evaluate(
-        env_factory=benchmark.make_env,
+        env=env,
         n_episodes=n_episodes,
         seed=seed,
+        verbose=True,
     )
 
     logger.info(
         f"Evaluation summary: {summary.to_dict()}",
     )
 
-    eval_dir = output_dir / model_type.value / f"seed_{seed}"
+    eval_dir = output_dir / model_type.value / env_type.value / f"seed_{seed}"
     eval_dir.mkdir(parents=True, exist_ok=True)
 
     summary_path = eval_dir / "evaluation_summary.json"
@@ -97,9 +142,13 @@ def main(
     logger.info(f"Saved summary to {summary_path}")
 
     history_df = pd.DataFrame([ep.to_dict() for ep in episodes])
-    history_path = eval_dir / f"evaluation_history_{model_type.value}_seed_{seed}.csv"
+    history_path = (
+        eval_dir / f"evaluation_history_{model_type.value}_{env_type.value}_seed_{seed}.csv"
+    )
     CacheManager.save(history_df, history_path)
     logger.info(f"Evaluation history saved to {history_path}")
+
+    env.close()
 
 
 if __name__ == "__main__":
