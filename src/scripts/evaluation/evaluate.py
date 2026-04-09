@@ -108,7 +108,8 @@ def main(
 
     logger.info(f"Loading model from {model_path}")
     model_type = get_model_type(model_path)
-    env_type = get_env_type(model_path)
+    # env_type = get_env_type(model_path)
+    env_type = EnvType.BASELINE
     model = load_model(model_type, model_path)
 
     env_id, env_config = get_env_config(env_type)

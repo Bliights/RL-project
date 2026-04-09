@@ -153,7 +153,7 @@ def main(
         )
         logger.info("Loaded existing model !")
     else:
-        if model == ModelType.DQN:
+        if model in [ModelType.DQN, ModelType.DOUBLE_DQN]:
             config = DEFAULT_DQN_CONFIG
         elif model == ModelType.SB3:
             config = DEFAULT_SB3_CONFIG

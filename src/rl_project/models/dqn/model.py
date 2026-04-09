@@ -523,3 +523,94 @@ class DQNModel(BaseRLModel):
         model.q_net.to(model.device)
         model.target_net.to(model.device)
         return model
+
+
+class DoubleDQNModel(DQNModel):
+    """
+    Double DQN model — identical to DQN except for the target computation.
+
+    In standard DQN, the same network selects AND evaluates the next action,
+    leading to overestimation bias. Double DQN fixes this by:
+    - Using q_net to SELECT the best next action
+    - Using target_net to EVALUATE that action
+    """
+
+    def update(
+        self,
+        state: np.ndarray,
+        action: int,
+        reward: float,
+        done: bool,
+        next_state: np.ndarray,
+    ) -> float:
+        """
+        Store one transition and perform a double DQN optimization step
+
+        Parameters
+        ----------
+        state : np.ndarray
+            Current state
+        action : int
+            Action taken in the current state
+        reward : float
+            Reward received after executing the action
+        done : bool
+            Whether the transition leads to a terminal state or limit
+        next_state : np.ndarray
+            Next observed state
+
+        Returns
+        -------
+        float
+            Training loss value for the update step
+        """
+        self.buffer.push(
+            torch.tensor(state).unsqueeze(0),
+            torch.tensor([[action]], dtype=torch.int64),
+            torch.tensor([reward]),
+            torch.tensor([done], dtype=torch.int64),
+            torch.tensor(next_state).unsqueeze(0),
+        )
+
+        if len(self.buffer) < self.config.batch_size:
+            return float("inf")
+
+        self.training_state.completed_steps += 1
+
+        transitions = self.buffer.sample(self.config.batch_size)
+
+        (
+            state_batch,
+            action_batch,
+            reward_batch,
+            done_batch,
+            next_state_batch,
+        ) = tuple(torch.cat(items).to(self.device) for items in zip(*transitions))
+
+        values = self.q_net(state_batch).gather(1, action_batch)
+
+        with torch.no_grad():
+            # Here for the double DQN, the q_net chose the best next action
+            # and target_net evaluate that action to compute the target
+            next_actions = self.q_net(next_state_batch).argmax(1, keepdim=True)
+            next_state_values = (1.0 - done_batch) * self.target_net(next_state_batch).gather(
+                1,
+                next_actions,
+            ).squeeze(1)
+            targets = reward_batch + self.config.gamma * next_state_values
+
+        loss = self.loss_function(values, targets.unsqueeze(1))
+
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+
+        if self.training_state.completed_steps % self.config.update_target_every == 0:
+            self.target_net.load_state_dict(self.q_net.state_dict())
+
+        if done:
+            self.training_state.completed_episodes += 1
+
+        self.decrease_epsilon()
+
+        return float(loss.detach().cpu().item())
