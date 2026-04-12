@@ -58,6 +58,25 @@ def get_env_type(model_path: Path) -> EnvType:
     return EnvType(parts[2])
 
 
+def get_model_seed(model_path: Path) -> int:
+    """
+    Get the seed of the model from the checkpoint file
+
+    Parameters
+    ----------
+    model_path : Path
+        Path to the saved model
+
+    Returns
+    -------
+    Int
+        Seed used to train the model
+    """
+    name = model_path.stem
+    parts = name.split("_")
+    return int(parts[4])
+
+
 @app.command(help="")
 def main(
     model_path: Annotated[
@@ -108,7 +127,6 @@ def main(
 
     logger.info(f"Loading model from {model_path}")
     model_type = get_model_type(model_path)
-    # env_type = get_env_type(model_path)
     env_type = EnvType.BASELINE
     model = load_model(model_type, model_path)
 
@@ -134,6 +152,9 @@ def main(
     logger.info(
         f"Evaluation summary: {summary.to_dict()}",
     )
+
+    env_type = get_env_type(model_path)
+    seed = get_model_seed(model_path)
 
     eval_dir = output_dir / model_type.value / env_type.value / f"seed_{seed}"
     eval_dir.mkdir(parents=True, exist_ok=True)
