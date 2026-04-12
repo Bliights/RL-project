@@ -126,3 +126,4 @@ class TrainingState:
 class ModelType(StrEnum):
     DQN = "dqn"
     SB3 = "sb3"
+    DOUBLE_DQN = "2dqn"

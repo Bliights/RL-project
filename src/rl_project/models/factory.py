@@ -2,7 +2,7 @@ from pathlib import Path
 
 from rl_project.models.core.base import BaseRLModel
 from rl_project.models.core.typing import ModelType
-from rl_project.models.dqn.model import DQNModel
+from rl_project.models.dqn.model import DoubleDQNModel, DQNModel
 from rl_project.models.dqn.typing import DQNConfig
 from rl_project.models.sb3.model import SB3Model
 from rl_project.models.sb3.typing import SB3Config
@@ -42,7 +42,7 @@ def build_model(
     """
     if model_type == ModelType.DQN:
         if not isinstance(config, DQNConfig):
-            raise TypeError("DQN model requires a DQNConfig.")
+            raise TypeError("DQN model requires a DQNConfig")
         return DQNModel(
             obs_dim=obs_dim,
             n_actions=n_actions,
@@ -51,8 +51,17 @@ def build_model(
 
     if model_type == ModelType.SB3:
         if not isinstance(config, SB3Config):
-            raise TypeError("SB3 model requires a SB3Config.")
+            raise TypeError("SB3 model requires a SB3Config")
         return SB3Model(
+            obs_dim=obs_dim,
+            n_actions=n_actions,
+            config=config,
+        )
+
+    if model_type == ModelType.DOUBLE_DQN:
+        if not isinstance(config, DQNConfig):
+            raise TypeError("Double DQN model requires a DQNConfig")
+        return DoubleDQNModel(
             obs_dim=obs_dim,
             n_actions=n_actions,
             config=config,
@@ -97,5 +106,8 @@ def load_model(
 
     if model_type == ModelType.SB3:
         return SB3Model.load(model_path)
+
+    if model_type == ModelType.DOUBLE_DQN:
+        return DoubleDQNModel.load(model_path)
 
     raise ValueError(f"Unknown model type: {model_type}")
