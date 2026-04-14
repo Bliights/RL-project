@@ -5,8 +5,9 @@
 2. [Development](#development)
 3. [Reproducibility](#reproducibility)
 4. [Project Structure](#project-structure)
-5. [Reusing the package](#reusing-the-package)
-5. [Contributors](#contributors)
+5. [Results and visualizations](#results-and-visualizations)
+6. [Reusing the package](#reusing-the-package)
+7. [Contributors](#contributors)
 
 ## Overview
 This repo contains the code for a Reinforcement Learning (RL) project in which the goal is to implement different RL algorithms to solve a specific environment ([highway-env](https://highway-env.farama.org/))
@@ -69,6 +70,9 @@ This repository is organized like a typical Python package so that you can reuse
 The rest of the folders are organized as follows:
 
 - **[`data/`](./data/)** : Folder to store all the models and results of the project
+
+## Results and visualizations 
+**You can find the results and visualizations of our project in the [`RL_project_group4.ipynb`](./src/scripts/visualization/RL_project_group4.ipynb) notebook**
 
 ## Reusing the package
 You can also install this package independently in any of your projects with:
